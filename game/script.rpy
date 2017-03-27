@@ -4,11 +4,76 @@ define r = Character("Rose", color="#FE2E64")
 define j = Character("June", color="#2E64FE")
 define u = Character("????", color="#D8D8D8")
 define ol = Character("Old Lady", color="#F5A9F2")
+define olm = Character("Old Man", color="#F5A9F2")
+define a = Character("Alarm")
+init:
+    $ s = 0 # this is a variable for bob's affection points throughout your game
+    $ suspicion_max = 3 # this variable should be set to bob's maximum affection points
 
+#Backrounds
+image bg arbol = im.Scale("arbol.png", 1280, 720)
+
+#Day Rose Images
+image rosechall = "Rosechallenging.png"
+image rosectears = "Roseclosetears.png"
+image rosehappy = "Rosehappy.png"
+image rosehappy2 = "Rosehappy2.png"
+image rosehappyclose = "Rosehapyclose.png"
+image rosehappyclosemo = "Rosehappyclosemopen.png"
+image rosehtears = "Rosehappytears.png"
+image rosehtears2 = "Rosehappytears2.png"
+image roselaugh = "Roselaughing.png"
+image roselaughx = "Roselaughingxtreme.png"
+image rosemadclose = "Rosemadclose.png"
+image rosemadder = "Rosemadder.png"
+image rosemadfrown = "Rosemadfrown.png"
+image rosemado = "RosemadO.png"
+image rosemadtears = "Rosemadtears.png"
+image rosemadtearsb = "Rosemadtearsblush.png"
+image rosenaughty = "Rosenaughty.png"
+image rosesad = "Rosesad.png"
+image rosesad2 = "Rosesad2.png"
+image rosesad3 = "Rosesad3.png"
+image rosesad4 = "Rosesad4.png"
+image rosesadtears = "Rosesadtears.png"
+image rosesadtears2 = "Rosesadtears2.png"
+image rosesurp = "Rosesurp.png"
+image rosesurp2 = "Rosesurp2.png"
+image rosetsun = "Rosetsundere.png"
+#night rose images
+image roseblush = "NRoseblush.png"
+image roseblush1 = "NRoseblush1.png"
+image roseblush2 = "NRoseblush2.png"
+image roseblush3 = "NRoseblush3.png"
+image roseblush4 = "NRoseblush4.png"
+image rosebored = "NRosebored.png"
+image rosehappy = "NRosehappy.png"
+image rosehappy2 = "NRosehappy2.png"
+image rosehappy3 = "NRosehappy3.png"
+image rosemad = "NRosemad.png"
+image rosemad1 = "NRosemad1.png"
+image rosemad2 = "NRosemad2.png"
+image rosemad3 = "NRosemad3.png"
+image rosemad4 = "NRosemad4.png"
+image rosemad5 = "NRosemad5.png"
+image rosemad6 = "NRosemad6.png"
+image rosenaughty = "NRosenaughty.png"
+image rosenormal = "NRosenormal.png"
+image rosesad = "NRosesad.png"
+image rosesad2 = "NRosesad2.png"
+image rosesad3 = "NRosesad3.png"
+image rosesad5 = "NRosesad5.png"
+image rosesad6 = "NRosesad6.png"
 
 label start:
-
-    scene bg room
+    
+    $ b = 0
+    $ s = 0
+    $ n = 0
+    $ g = 0
+    $ ans = 0
+    
+    scene bg arbol
 
     "The air was cold, June felt the snowflakes touch his skin, but he was so cold they didn’t even melt."
     "It was not his first time in England but he was amazed at the white snow that covered the streets."
@@ -49,13 +114,570 @@ label start:
     "Panic."
     "She walks the distance there is from the door to my place and proceeds to take a sit just at my side. I don't know yet, but i think I just dodged a bullet."
     "Class is just as boring as expected, so I feel relieved when the bell rings. I proceed to stand up and walk towards the class exit, but someone stands in front of me and doesn't let me get to it."
+    show rosehappy
+    with dissolve
     u "Hi I don’t believe i’ve introduced myself, i'm Rose, your neighbor. Pleased to meet you."
     j "Hi, my name is June, I moved in yesterday to your apartment complex and it looks like we are on the same… class."
     "I don’t even remember the name of the class we’d just recieved so I space out for a moment there, enough time for her to notice."
+    hide rosehappy
+    with dissolve
+
     "She chuckles a little bit when I try to remember the name of the course."
     r "You seem kinda lost, Are you alright?, Maybe I can walk with you back to the dormitories."
     j "Don't you think it will be weird?"
     r "What do you mean? We girls should protect each other backs."
     "I see now, I was mistaken as a girl and put in the girls dorm. A foolish mistake, but I can not back down now, I have to keep my facade."
+    
+    #Show bar
+    
+    "This is the suspicion bar, if it gets full, people will suspect that you are not a girl, try not to fill it if you wish to stay hidden."
+    
+    #Continue Dialogue
+    "Well i don’t want  to be exposed as a pervert in front of the university, so I will continue the act. I hope they don’t ask me to go swimming or something."
+    "With that we set course towards the dorms. Rose leading me by the hand. Damn, girls don’t really mind physical contact between them. I try not to look too embarrassed, without success."
+    "She looks at me for a few seconds, her stare is piercing my soul."
+    "She keeps walking without saying a single word, we are halfway towards our destination."
+    "After walking for awhile, she finally breaks the silence."
+    r "I actually thought you were antisocial, I mean, today in the morning you actually ran away from the girls at the dorm. But now that I see how flustered you are I can’t do anything but chuckle a little at the thought"
+    j "Actually I was kinda scared this morning."
+    r "Scared? Why?"
+    
+    menu: 
+        "There was a cockroach on my bathroom this morning.": 
+            $ g = g + 1
+        "Women scare me.":
+            $ s = s + 1
+        "I didn’t sleep well because there was someone watching me last night.":
+            $ n = n + 1
+        
+    "Rose is kinda surprised by my answer, but remains silent and just walks in front of me, she didn’t even flinch by my answer."
+    "After a few minutes we arrive at the dorm, we part ways at the stairs because her room is to the right wing and mine to the left."
+    "I’m emaciated. I check the clock. 3:45 pm."
+    j "Damn, it’s not even dark yet…"
+    j "Well I didn’t sleep much last night so the time is as right as it’s going to get"
+    "It doesn’t take me long to fall asleep."
+    
+    "*Day 2*"
+
+    j "Damn, it’s morning already? Didn’t even had time to eat last night."
+
+    "I get ready as fast as I can and sneak up to the door to see if any of the girls is awake."
+    "Deserted."
+    "I take the opportunity and dash out of my room. As I am going downstairs my stomach reminds that I am actually starving."
+    "I turn left on the building’s lobby and access the cafeteria."
+    "It doesn’t take long for me to order some pancakes."
+    "I feel something on my back so I try to turn to see what is it but before I can even check, something blinds me."
+
+    u "Guess who?"
+
+    "I’m shocked for a sec there but then I remember that I don’t know anyone besides Rose so the answer is obvious."
+
+    j "Rose, clearly the only early game prankster I know"
+
+    r "You got me there haha"
+
+    r "Not fair, probably you didn’t even know anyone else on the dorm!"
+
+    "I cringe a little, she notices so I get a little bit more flustered."
+
+    r "Exchange students sure are weird, why are you red all the time?"
+
+    menu:
+        "I’ve never been approached by such a beautiful woman before":
+            $ g = g + 1
+            $ s = s + 1
+            $ ans = 1
+            j "I’ve never been approached by such a beautiful woman before"
+        "I’m actually a guy":
+            $ b = b + 1
+            j "I’m actually a guy"
+            $ ans = 2
+        "I’m actually kinda drunk at the moment":
+            $ n = n + 1
+            j "I’m actually kinda drunk at the moment"
+            $ ans = 3
+
+    "Her eyes are wide open. She cannot believe what I just said. But  she calms down after a few seconds."
+
+    if ans == 1:
+        r "Well, as long as you don’t hit on me!"
+    elif ans == 2:
+        r "You silly goof, how am I going to believe that?!"
+    elif ans == 3:
+        r "Not possible, you’ve only lived on the dorm for a day"
+
+    "Chatter after that goes without events so we head to our classroom."
+
+    j "Damn, Calculus in the morning really sucks"
+
+    r "Well we can skip classes if you want..."
+
+    "She says it with the most mischievous smile I’ve ever seen in my life."
+
+    j "That is not a proper answer lady, what if we get caught?"
+
+    "She kinda looks sad at my answer, like a little puppy after being scolded."
+    "I feel a little bad that I turned her down without even thinking in my response. "
+
+    j "Damn, don’t do those puppy eyes, let’s go get some ice-cream at the mall..."
+
+    "Suddenly she looks rejuvenated by my answer."
+    "In fact she is so happy that I start to question if she really was sad at first or if it’s was just an act."
+    "Well can’t do anything now, so I accept my destiny."
+
+    "We start to walk on the same direction to the University, but turned right a few blocks before."
+    "After looking at the mall I think that just a really disoriented person would miss it, it has a huge Mall sign at the top and it’s surrounded by flat 1 level houses."
+
+    "We walk in and proceed to search for the ice-cream shop. It doesn’t take us long because it’s by the entrance of the second floor."
+
+    "Rose is always walking in front."
+    "I wonder why she doesn’t like me to be ahead of her, maybe she feels like it’s her duty as an old-established student."
+    "I don’t mind though, the less time she spends observing me, the less I’m likely to get caught."
+
+    r "Can you give me a Vanilla cone please sir?"
+
+    "The old man produced said cone with such dexterity that I’m actually perplexed."
+    "I’m so surprised I forget it’s my time to pick a cone, so Rose shakes me out of it standing closely in front of me."
+
+    j "What.. Oh yes the flavour, I’ll have Vanilla-Strawberry flavour please"
+
+    olm "As you wish sweetie"
+
+    "Damn it doesn't feel good when even the old man mistakes you for a woman."
+    "For a second there, looking on the bright side, if he said otherwise he would’ve blown my cover."
+
+    "I turn around with my cone and proceed to take a sit on the bench that Rose is sitting in."
+    "I don’t know why but she is staring at my cone intensely."
+
+    j "Do you want to try it?"
+
+    r "It’s not that, I’m kinda confused that you picked those two flavours."
+    r "I mean, probably one will be stronger than the other and it will end up tasting just like it…"
+
+    j "Well that’s not how I see it, let me explain."
+    j "It’s not two different things, they are part of one whole, like yin and yang they are not trying to dominate the universe but coexist in balance."
+    j "Sure Vanilla is great alone and so is Strawberry, but together is where they really shine."
+
+    "I don't know if what I said was that weird but Rose is staggered. It takes her a few seconds to recompose herself."
+
+    r "Yeah I understand what you mean. I’m not feeling well right now so maybe I should go back to my room…"
+
+    j "Do you want me to escort you?"
+
+    r "No. I’m fine, you should probably head back to our second class, maybe you can catch it up"
+
+    "I’m kinda confused but it doesn’t matter as Rose just stands up and starts walking towards the exit."
+    "I can only watch her as she finally exits the building. Damn she is pretty. But that feeling doesn’t last long because I realize that I may have fucked up something with my analogy."
+    "I spent the next half an hour trying my best to understand her without success."
+
+    j "Damn girls sure are mysterious"
+
+    "Well I’ve got to make up with her somehow."
+
+    "After a few minutes of critical thinking I decide to buy her something. I don’t know what she likes but whatever, can’t get any worse, right?"
+
+    "I spend the rest of the day searching for something, finally I decide to buy her some chocolates."
+
+    j "I’ve never met a sane person who doesn’t like chocolate, this should be alright"
+
+    "I proceed to buy the chocolate at the convenience store and start to head back to my dorm."
+
+    "Time sure flies fast, after a few minutes I’m standing in front of the dorm, didn’t even notice the time it took me to get there."
+    "Whatever, I better give her the chocolate today, sure, it’s dark but, she’s probably still awake."
+
+    "I walk into the dorm and to my surprise there’s no one on the lobby. Probably all of them are already asleep. I take the stairs and in a flash I’m in front of her room."
+    "I hesitate for a second then I proceed to knock on the door. "
+
+    "No answer."
+
+    "Maybe she is not at home, so I turn around. As I was taking my first step forward I felt something around my neck."
+    "I raise my hand to it and touch it for a second. It seems to be a scarf."
+
+    "When I try to turn around the scarf tightens up, I can’t breathe well anymore."
+
+    u "What do you want with me woman?"
+
+    "Wait a second, I know that voice, it's Rose’s, isn’t it?. I turn around to confirm it"
+
+    "I was right, it is her."
+
+    j "Rose why are you doing this…?"
+
+    "Wait a second why is her hair red? Am I already asphyxiating?"
+    "No...something's not right."
+
+    j "I just wanted to give you this chocolat…"
+
+    "I haven't even finished my question when she snaps the bar of chocolate out of my hand. Then as quick as lightning she closes the door of her room."
+    "Then I hear something muzzled on the distance."
+
+    r "Keep the scarf, I was going to give it to you anyway, you seemed cold this morning..."
+
+    "The rest is inaudible, but i think I got the important part anyway. I check the scarf, it's hand made with red and white candy floss, very warm at the touch."
+    "I don’t know what to think I’m more confused now that I was at the mall."
+
+    "Anyway, I’ll ask her tomorrow about it. For now I’ll just go to sleep."
+
+    "It doesn't take me long to get ready to sleep. As I jump in bed, wrapped in the warm Red-White scarf that Rose gave me, I quickly fall asleep."
+
+    "*Day 3*"
+
+    "Thank God for that noisy alarm I selected. Just when my nightmare was getting out of hand, it woke me up."
+
+    "I quickly get up and in less than 20 I’m ready to go out of my room. As I open the door a chilly breeze hits me in the face, so I close the door quickly."
+
+    "I remember that scarf Rose gave me yesterday so I grab it and wrap it around my neck."
+
+    "I gaze at the clock for a second. I’m running late for my first class. I quickly open the door and start walking rather fast towards the stairwell."
+
+    "I’m so troubled by yesterday’s turn of events that I didn’t notice someone standing after a corner and end up bumping into her."
+
+    j "Sorry I didn't notice you were standing there, my bad"
+
+    "As I’m getting up I notice who is it that I bumped into."
+
+    "It’s Rose."
+
+    "I’m embarrassed so I quickly look away from her. But she's staring at me. I start to get more nervous, is there something in my face?"
+
+    "After a couple of uncomfortable seconds she breaks the silence."
+
+    r "Where did you get that scarf?"
+
+    "I’m confused by the question so I don’t reply immediately."
+
+    j "What do you mean, you gave it to me yesterday when you were on that foul mood…"
+
+    "I look up so I can see her face for a second. Her eyes are wide open like plates and she is frozen, paralyzed."
+
+    "She wakes up from the shock and tries to escape, but i’m faster so I grab her by the wrist before she can even start running away."
+
+    "I turn her around so I can see her face again, she is crying. I don’t know what to do so I try to comfort her the only way I know."
+    "I pat her on the head a couple of times and wipe her tears with my sleeve."
+
+    j "Hey, everything is going to be alright, just tell me what happened when you are ready, ok?"
+
+    "At this moment she loses control over her emotions and starts to cry intensely."
+
+    r "I’m sorry…. I will"
+
+    "At this point we are so late for our first class that there is no point in hurrying anymore. We walk calmly towards the University. I don’t let go her hand, she needs this."
+
+    "After a prolonged silence in our journey she mumbles something."
+
+    r "I’m sick and I’m not in control of what I do sometimes. Didn’t even remember what I did yesterday. I hope you can forgive me…"
+
+    j "Don’t trouble yourself with it Rose, anyway, you gave me this beautiful scarf."
+
+    "Finally, she regains her usual silliness and laughs a little. It’s better when she is not sad."
+
+    "Classes at the University elapse without any memorable events. Boring day. I’m saved by the bell because I was falling asleep."
+    "I get up and gather my things, doesn’t take me long because I don’t use notebooks, just a reader and a tablet. As I approach the exit someone tugs my sleeve lightly."
+    "It’s Rose."
+
+    r "I want to compensate you for understanding my situation, maybe we can go somewhere where we can talk more comfortably."
+
+    j "Oh, I got just the right place in mind!"
+
+    "I take her by the hand to the Mall, her hands are as cold as ice so I lend her my hand gloves. Even when one is being mistaken as a girl one must not let a young woman suffer."
+
+    "We enter a cafe and take a sit in a table close to the window, we can see everything from here. Good thing that it’s almost deserted, just an elderly couple sips some tea on a corner."
+
+    "We small-talk for 20 minutes or so, when Rose decides to acknowledge our serious matter."
+
+    r "Today I told you that I was sick, well...that is not entirely true"
+
+    r "You see, remember we are not normal humans June, we were created on labs by scientists"
+
+    "I nod so she knows I understand what she means."
+
+    r "You see I was one of the first successful tests and have some ‘bugs’ on my DNA if you can call them like that"
+
+    r "I’m one person at night and another one by day…"
+
+    r "The other Rose…she is not a kind person."
+    r "She’s dangerous."
+
+    "She goes on with more deep information about herself, but that first part was so intense that left me thinking for a while."
+
+    "After a while we’re just sipping our near-cold drinks and staring out the window. I decide to tell her what I think about her problem."
+
+    menu:
+        "You cannot deny a part of who you are":
+            j "Why fight with a part of yourself, there cannot be a Rose without the day Rose and night Rose. You may have suffered with love once but you don’t give up on a whole emotion because of one bad experience" 
+            j "I like you the way you are, with flaws and everything"
+            $ b = b + 1
+        "Don’t give up hope, you can be cured and live a normal life":
+            j "Don't’ give up just yet. Medicines advances so quickly that maybe in a couple of years you can be treated and finally live a normal life. Hope is the last things that dies and I’ll be right here for you Rose"
+            $ g = g + 1
+        "I don’t feel comfortable talking about this kind of stuff with girls, sorry":
+            $ s = s + 1
+    
+    if s >= 3:
+        jump bad
+    elif b >= 2:
+        jump bad
+    elif g >= 2:
+        jump good
+    elif n >= 2:
+        jump neutral
+    
+    
+    
+    return
+    
+    
+#Bad Ending
+label bad:
+    "Rose seems confused at my answer, but tries to hide her confusion behind her drink. She takes a few slow sips and looks out the window."
+    "We stay still for a few seconds, then she breaks the silence with a quick gaze and a puzzling statement."
+    r "If I didn’t know you are a girl, I would definitely mistake you for a guy..."
+    "I don’t know how to take this, maybe she discovered my secret way to fast. I should take this opportunity to clear the mistake they made at the dorms..."
+    j "You got me… They made a mistake at the dorms, I’m actually not a girl, but I think the photo I sent on my registry application fooled them." 
+    j "Maybe I should cut my hair, sadly I like it the way it is right now."
+    "No emotion. She just keeps looking at me while I finish my explanation. I don’t know what to do, she looks frozen in time."
+    "About 20 seconds go by...she picks up her cup and finishes her drink."
+    "She stands up, thanks me for the coffee and exits the shop."
+    "I don’t know how to react so I sit there, just wondering if I made a mistake or not. Time passes by slowly. After I finish my coffee I head back to my room."
+    "I'm confused, did I say something wrong?"
+    "The way back is as tedious as a math exam, takes me longer because I doze out on the crosswalks that are on the way."
+    "Maybe I should leave."
+    "I don't know if Rose plans to tell that old lady from the building that I'm actually a guy."
+    "I'm scared, my fate is at the hands of someone I barely know and that is pretty bad."
+    "Finally I arrive to the dorm, I'm surprised, it is this empty. Then I remember that it is a student dorm and that everyone is probably still at campus."
+    j "Well I hope Rose is still in her room. I should apologize to her as soon as possible."
+    "I climb up the stairs as slow as I can, but it's just delaying the inevitable."
+    "Finally I arrive to her room. I'm frozen there. Thoughts start rushing in my head. What if.. well worst case scenario I get expelled."
+    "I knock at her door effusively but nobody answers. After a few minutes, I give up."
+    j "Maybe she's still at campus and actually attended our next class, unlike me."
+    "Well, I'm pretty tired. Stressful days make me tired for some reason."
+    "I get into my room and just slam the door, I'm pissed by the turn of events. I don’t even want to put on my pajamas, I'm too tired for etiquette."
+    "Sleep catches up to me in no time. The stress is so immense that soon I'm fast asleep."
+    "*bump*"
+    "There is a noise coming from the door. It is so loud that it wakes me up."
+    "What time is it right now?"
+    "I take a look at the clock on the wall. 3:42 am. What on earth is so loud that it woke me up?"
+    "Then I feel it. The cold. A chilly wind comes from the entrance."
+    "Then I notice it. The door is open and someone is approaching."
+    "It takes me a couple seconds to determine who it is, but as soon as the moonlight is reflected on her head the answer is clear."
+    "It is Rose."
+    j "How did you get in here?, the door was locked!"
+    r "A few locks won't stop what is coming to you."
+    r "You thought you could deceive me?, Did you forget that I'm like this at night?"
+    r "Well, you won't be fooling anyone else from now on…"
+    "After she stops talking she rushes to me. She is too fast for me to react. I'm still half asleep so she quickly overcomes me."
+    r "It seems fitting for you to die by the gift I made for you."
+    "Quickly she reaches out for the scarf she knitted for me and wraps it around my neck."
+    "I feel the air escaping my body. I try to inhale but I can't."
+    "I've brought this upon myself. Seems fitting I end up this way."
+    "Suddenly everything goes black."
+    "Finally I'm at ease, maybe in the next life I won’t be this careless…"
+    "END"
+    return
+    
+#Good Ending
+label good:
+    "Rose smiles a little after my answer, but happiness doesn’t last long enough as she soon starts to weep a little."
+
+    j "What did I say?, Did I hurt you in someway?"
+
+    r "No, it’s just, you gave me hope for a minute there…"
+    r "You see... doctors said that my condition was untreatable..."
+
+    j "That may be the case today but together we can search for it someway"
+    j "We are on a biology-oriented university for that matter"
+
+    "It seems I succeed in calming her down a bit. Maybe we should go somewhere else, I feel like she opened to me in some way maybe I should make up for that."
+
+    j "Hey , I know we’ve known each other for like a week, but you know you can trust me… anything you need that I can help you with you can tell me."
+
+    r "I know…"
+
+    "I should really change the mood someway or the rest of the evening Is going to be pretty unpleasant."
+
+    j "Maybe we can hit up the theater and watch a movie or something..."
+
+    "She seems confused for a second there, but then I remember something that maybe I haven’t told her yet. Yes you guessed right, she still doesn’t know I’m a guy."
+
+    j "I have a confession too Rose…"
+
+    r "Huh?"
+
+    j "You see, the day I came to England they made a mistake on my University inscription, the truth is that I’m a man…"
+
+    "Her eyes widen a bit but then she recovers her composure. A few seconds go by but still no answer from her. I start to worry."
+
+    "I stand up and face the door, maybe it is better for me to get out. "
+
+    "I cannot move, there is something holding me up, i quickly notice that Rose is holding up my sleeve and she wont let me advance."
+
+    "She points at the place where I was sitting, so I assume she want’s me to sit down over there. After I do it, she takes another few seconds and starts talking."
+
+    r "You see… I knew from the first day that you were a guy."
+
+    j "Wha.. how?"
+
+    r "Well... nobody noticed it but you entered the dorm wearing your casual clothes, and they were man-looking so I suspected it, later that night I went to check, well actually the other Rose went to check, and we found your ID on your luggage so basically we knew."
+
+    j "You checked my backpack?!?"
+
+    r "Sorry I just couldn’t resist"
+
+    j "Nah I was the one who was wrong, I should’ve told you from the start."
+    j "So, we are even I suppose"
+
+    r "Yup… Nice to meet you"
+
+    j "Stop fooling around you doofus, how about that movie then?"
+
+    r "Damn, straight for the vein, guys have less tact than I’ve thought..."
+
+    "I think I made a funny face at that statement because she looks another way quickly."
+
+    r "Okay I’ll go out with you, just stop looking like a stray dog in front of a bakery please!"
+    r "Before we go, let me go back to the dorm, I’m kinda tired at the moment and want to take a nap"
+
+    j "Okay then, let's head back to our rooms"
+
+    "The journey back to the dorm is as monotonous as always, but has a different tone now. She knows my secret and I know hers. There is an invisible bond between us that tie us somehow."
+    "We enter the building, climb up the stairs and part ways on the hall. I enter my room and go straight to sleep. This time I set up an alarm because I don’t want to screw up this date."
+
+    a "***beep beep***"
+
+    "That annoying alarm wakes me up. After I come back to my senses it is not so bad, I have to get ready fast or I’ll be late."
+
+    "I get ready in no-time, and on top of it I pick up my thick jacket, it seems like this evening is going to be chilly."
+
+    "I walk over to Rose’s room and knock the door twice, it only takes me enough time to blink because she opens it faster than lightning."
+
+    "I’m caught out of guard, so I say the first thing that comes to my mind."
+
+    j "Hey, you ready?"
+
+    r "As ready as I’ll ever be."
+
+    "We walk out of the dorm and as we are walking down the street Rose steps in some frozen water, she almost falls off, but I manage to catch her on time."
+
+    "I take the opportunity, I don’t think I’ll another one this good tonight."
+
+    j "Careful girl, I don’t want to head up to the hospital tonight, I have an idea, why don’t you let me hold your hand so if you fall, we fall together?"
+
+    "Rose looks quickly another way, I don’t know what expression she makes but I go for it anyway, I mean what can I lose?"
+
+    "She doesn’t let me hold her hand as she quickly withdraws them when I touch her."
+
+    "I'm hurt inside, frozen in place. God please take me right now."
+
+    "She approaches me, and grabs my arm up to my shoulder, she is so close I can even smell her hair. Floral essence, probably roses. Would make sense."
+
+    "I take a look at her, she is so flustered she may pass out any second, but I cannot point that out, my manliness won’t let me do so."
+
+    "We walk slowly, mainly because we want to stretch up the time we have together the most we can, using the excuse that we may trip over some ice."
+
+    "We arrive at the cinema, it’s dawn when we pick up our tickets for the movie, it wasn’t much of a choice, the only two movies this small town had were a horror one and a futuristic dystopian type of movie."
+
+    "It takes us some time to order our popcorn because the cashier was slow as a snail. After that, we go to our theatre-room. It’s almost empty, I’m not really surprised considering that nobody was buying tickets."
+
+    "We sit around the rows that are on the middle because we don't want to be too close to the screen."
+
+    "At the start of the movie everything is ok, Rose seems to be doing ok, but then a scary scene pops up and she freaks out: I try to calm her a little but nothing seems to work. It’s then when I decide to grab her hand just to calm her down."
+
+    "It seems to work so I keep it for the rest of the movie as well. After the movie finishes we leave as usual and go to the lobby, it is late at night, the movie took more than we expected so it is deserted."
+
+    "We go outside and it is pitch dark, can't even see my hands when I hold them right in front of me. Then I remember that Rose changes whenever it is night or day so I turn around as fast as I can and start searching for her."
+
+    "It doesn’t take me long, she is standing at the theatre’s entrance, just there, shocked, staring at the sky."
+
+    "I approach her but she doesn’t seem to notice me so I gently take her hand."
+
+    j "What happened, did you happen to see a ghost or something?"
+
+    "She snaps out of it, then just looks at me and her expression changes completely. She is now borderline crying."
+
+    j "What, did I say something that made you upset?"
+
+    "She mumbles something but I can barely understand anything. I come closer to her and hug her so she knows I'm here for her if she needs me. "
+
+    "She whispers in my ear: "
+
+    r "I’m shocked, it is now nighttime, but I’m still my normal self"
+
+    j "How is that even possible!?"
+
+    r "I don’t really know, but today was a special day for me, I shared memories with someone I care about… I think you made this possible"
+    r "The truth is that I care about you… No. That’s not true, since the moment that I first saw you, you moved something inside me."
+    r "I started to look forward to our next meeting, I could barely sleep. But today all my doubts were washed away…"
+    r "I realized today that I’m in love with you."
+
+    "I don’t even hesitate, I want her to know that I feel the same way she does, but the words don’t come out."
+
+    "So I do what I feel would let her know how I feel about her."
+
+    #Kiss Scene
+
+    j "I want to know you better, I don’t care if you are missing parts, for me you are complete and that is what makes you perfect."
+    "END"
+    return
+    
+label neutral:
+    "Rose seems to be confused at my answer, she doesn’t even acknowledge anything. The rest of the evening we talk about things that have little to no impact whatsoever, after our chat is over I pay for our drinks and head out for the exit."
+    "We walk back to the dorms, nothing special happens all the way anyway. We climb up the stairs towards our rooms and split up when we are at our floor."
+    "I enter the room feeling kinda sad, maybe I did something that Rose didn’t like or maybe something that made her upset. I really don’t know at all."
+    "Night comes but I'm not sleepy at all, maybe I’ll go for a walk somewhere outside. So I get ready, pick up my thick jacket and my scarf and head right outside."
+    "Everyone is asleep, not surprising knowing it’s around  like 3 am or something. On the back of the dorms there is a little park with umbrellas so I take a sit around there."
+    "I pick up my phone and start to play a card game in it, ah it feels much better when you are outside, I’m not really claustrophobic but just the fact that I’m outside that little room makes me feel better."
+    "Suddenly I feel like there is someone behind me."
+    "I quickly get on guard and turn myself around but after my eyes get accustomed to the darkness I can say who is it."
+    "It’s Rose."
+    j "Darn you scared me Rose, please don’t do that again"
+    r "But you look cuter when you are scared like that"
+    j "Wha..?"
+    "I figure it out, it’s the other Rose, day Rose doesn’t normally behave like this."
+    r "Don’t you like nights?, I find them very vexing, this is the only time I have to be my real self."
+    j "So you consider yourself as the real Rose then."
+    r "Then explain why I have different feelings than the other Rose."
+    r "Some things don’t bother her but they piss me off. Sometimes she does something she regrets but I think they are Ok. I’m always present in her even If I cannot make anything to change the course of action."
+    r "I’m my own self, trapped inside her, powerless"
+    j "Well if it makes you feel better I like you as well, you may be evil and sadistic but those are your own traits and if you consider yourself as another person so will I"
+    r "Considerate for someone who the other one despises"
+    j "So the other Rose hates me… well I wasn’t for her when she needed me. I got what I deserved. I don’t know but it saddens me deeply somehow."
+    r "Huh, you talk like I care how you relationship with her is going. Go cry to your room alone, I won’t comfort you in any way if that’s what you expect."
+    r "I’ll take my leave, remember to close the gate so they don’t know you were outside this late."
+    j "Wait, where are you going this late at night, It’s not safe for you to be on the streets."
+    "She firmly ignores my advice and keeps on walking towards the street. I cannot let her go alone, I have to protect her somehow."
+    "So I decide to follow her at distance, so she doesn’t know that I am protecting her."
+    "Everything is calm so I can relax a bit, no one’s on the street so probably she will return safely after she is done with whatever it is she is planning to do."
+    "She walks towards an old bridge, but she decides not to go over it, instead she takes some small rusty stairs on the side. The stairs go under the bridge, honestly, what is she thinking?"
+    "I catch up to the bridge’s side and take a look inside, what I see amazes me. She is giving food she had on her backpack to a homeless family."
+    "How is it even possible, this Rose could easily pass up for like a serial killer or something. This made me realize that appearances may deceive me but if I look closer maybe I’ll find the truth hidden somewhere."
+    "Rose is quickly done with the family and starts walking towards where I’m hiding, so I climb the stairs as fast as I can, luckily I’m fast enough so she doesn’t notice me hiding on a bush."
+    "She starts walking back to the dorm but I notice something’s off. There is a car parked down the road. The car looks suspicious so I start approaching Rose to be as close as I can be."
+    "Suddenly a man pops out of the car and grabs her by the arm, I don’t have much time to act so I run towards them. I catch up to them, he is still struggling on trying to get her on the passenger's seat."
+    "I punch the guy in the face so hard he hits the back of his head with the door. He is knocked out."
+    j "Rose we gotta get out of here fast!"
+    "She is still baffled at the incident so she appears like she’s on shock. Kinda weird if you ask me because this Rose’s blood is as cold as ice."
+    "I grab her forearm firmly and we start running to the dorms. We get there in no time."
+    "We take some time to recover some breath but we are exhausted because of the run. We stay like that a couple of minutes in silence, Rose is the one that breaks the silence."
+    r "Why were you following me?"
+    j "I just couldn't let a young woman go out this late at night, no matter if you are cold to me you are still precious to me."
+    "As I finish my statement Rose explodes, She is crying seas. I don’t know what to do so I hug her firmly. She gets a hold of herself and pushes me away. She wipes her tears slowly."
+    r "Remember when I told you that the other Rose made things that she liked but I disliked?"
+    j "Yes, I remember, you told me just a few hours ago.."
+    r "That's not the point I'm trying to make you smartass."
+    "She gives me such a mean look that I may be facing satan himself, but it quickly changes to a more comprehensive one."
+    r "What I’m trying to say is that the other one wanted you to stay away from her, and I don’t want that… Do you understand?"
+    j "What are you trying to say, that you don't dislike me as the other Rose?"
+    r "You fool, are going to make me say it don’t you!?"
+    r "I think I’m in love with you, alright? I don’t want you to leave my side, do you understand?"
+    "She approaches me, we are facing each other, just a few centimeters away from each other."
+    "Suddenly she takes the initiative and kisses me, just a short one to see if I’m into her, I so I decide to assure her that I like her."
+    "I kiss her again, longer this time."
+    "After it she kinda looks sad so I have to ask her why."
+    j "Isn’t this what you wanted?"
+    r "You probably don’t even like me. I mean, I’m different from the Rose you know, I have more flaws, and nobody likes the way I am"
+    j "Those things you call flaws are the things that make you who you are, and I like it all"
+    r "But I can't see you everyday, how can I be with you?... why did I have to be the night one and not the day one?"
+    j "Love knows no boundaries Rose, I’ll be here with you every night for you are the Rose that matters to me."
+    "END"
     
     return

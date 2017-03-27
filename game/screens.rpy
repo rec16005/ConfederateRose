@@ -5,6 +5,7 @@
 init offset = -1
 
 
+
 ################################################################################
 ## Styles
 ################################################################################
@@ -256,7 +257,7 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
-
+            textbutton _("Stats") action ShowMenu('Stats')
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -1456,6 +1457,24 @@ style slider_pref_slider:
     variant "small"
     xsize 600
 
+################################################################################
+## Screen Stats
+################################################################################
+
+screen Stats:
+    vbox xalign 0.1 yalign 0.1:
+        textbutton "Show suspicion points" action ui.callsinnewcontext("aff_screen_label")
+        textbutton "Return" action Return()
+            
+screen aff_screen:
+    frame:
+        has vbox
+        text "Suspicion: [s] points"
+        textbutton "Return" action Return()
+
+label aff_screen_label:
+    call screen aff_screen
+    return
 
 
 
