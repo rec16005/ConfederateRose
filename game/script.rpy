@@ -12,6 +12,30 @@ init:
 
 #Backrounds
 image bg arbol = im.Scale("arbol.png", 1280, 720)
+image bg adentrocine = im.Scale("AdentroCine.png", 1280, 720)
+image bg aerepuerto = im.Scale("Aereopuerto.png", 1280, 720)
+image bg benchatnight = im.Scale("BenchAtNight.png", 1280, 720)
+image bg biblioteca = im.Scale("Biblioteca.png", 1280, 720)
+image bg cafe = im.Scale("Cafe.png", 1280, 720)
+image bg calleinglesadia = im.Scale("CalleInglesaDia.png", 1280, 720)
+image bg calleinglesanoche = im.Scale("CalleInglesaNoche.png", 1280, 720)
+image bg carrosospechoso = im.Scale("CarroSospechoso.png", 1280, 720)
+image bg centrouni = im.Scale("CentroYale.png", 1280, 720)
+image bg cherrypath = im.Scale("CherryPath.png", 1280, 720)
+image bg cuartodorm = im.Scale("CuartoDorm.png", 1280, 720)
+image bg dentrocampus = im.Scale("DentroCampus.png", 1280, 720)
+image bg edifapt = im.Scale("EdificioApt.png", 1280, 720)
+image bg exteriorbnch = im.Scale("ExteriorBenchNight.png", 1280, 720)
+image bg pared = im.Scale("Pared.png", 1280, 720)
+image bg parquenoche = im.Scale("ParqueNoche.png", 1280, 720)
+image bg pasillodorm = im.Scale("PasilloDorm.png", 1280, 720)
+image bg portaly = im.Scale("PortalYale.png", 1280, 720)
+image bg puente = im.Scale("Puente.png", 1280, 720)
+image bg salidatren = im.Scale("SalidaTren.png", 1280, 720)
+image bg salonclase = im.Scale("SalonClase.png", 1280, 720)
+image bg ventisca = im.Scale("Ventisca.png", 1280, 720)
+image bg ventisca2 = im.Scale("Ventisca2.png", 1280, 720)
+
 
 #Day Rose Images
 image rosechall = "Rosechallenging.png"
