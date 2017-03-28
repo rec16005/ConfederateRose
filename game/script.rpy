@@ -78,6 +78,12 @@ image bg salidatren = im.Scale("SalidaTren.png", 1280, 720)
 image bg salonclase = im.Scale("SalonClase.png", 1280, 720)
 image bg ventisca = im.Scale("Ventisca.png", 1280, 720)
 image bg ventisca2 = im.Scale("Ventisca2.png", 1280, 720)
+image bg mall = im.Scale("Mall.png", 1280, 720)
+image bg heladeria = im.Scale("Heladeria.png", 1280, 720)
+image bg lobbycine = im.Scale("LobbyCine.png", 1280, 720)
+image bg afueracine = im.Scale("AfueraCine.png", 1280, 720)
+image bg pasajero = im.Scale("Pasajero.png", 1280, 720)
+image bg universidad = im.Scale("Universidad.png", 1280, 720)
 
 image rose = LiveComposite(
     (584,720),
@@ -143,6 +149,8 @@ label start:
     $ night = ""
     $ rose  = "happy"
     $ nrose = "mad"
+
+    
     "The air was cold, June felt the snowflakes touch his skin, but he was so cold they didn’t even melt."
     "It was not his first time in England but he was amazed at the white snow that covered the streets."
     "June knew for fact that those flakes weren't natural and that amidst the peace they gave to him, they were silently deadly. Human time on earth was reaching its end."
@@ -331,7 +339,7 @@ label start:
     hide rose with dissolve
     scene bg calleinglesadia with fade
     "We start to walk on the same direction to the University, but turned right a few blocks before."
-    scene bg mall with fade #estamadre tampoco alv
+    scene bg mall with fade
     "After looking at the mall I think that just a really disoriented person would miss it, it has a huge Mall sign at the top and it’s surrounded by flat 1 level houses."
     
     "We walk in and proceed to search for the ice-cream shop. It doesn’t take us long because it’s by the entrance of the second floor."
@@ -339,7 +347,7 @@ label start:
     "Rose is always walking in front."
     "I wonder why she doesn’t like me to be ahead of her, maybe she feels like it’s her duty as an old-established student."
     "I don’t mind though, the less time she spends observing me, the less I’m likely to get caught."
-    scene bg heladeria with fade #nein nein nein alvvv
+    scene bg heladeria with fade 
     r "Can you give me a Vanilla cone please sir?"
 
     "The old man produced said cone with such dexterity that I’m actually perplexed."
@@ -432,17 +440,18 @@ label start:
     "It doesn't take me long to get ready to sleep. As I jump in bed, wrapped in the warm Red-White scarf that Rose gave me, I quickly fall asleep."
     hide bg cuartodorm with fade
     "*Day 3*"
-
+    show bg cuartodorm with fade
     "Thank God for that noisy alarm I selected. Just when my nightmare was getting out of hand, it woke me up."
 
     "I quickly get up and in less than 20 I’m ready to go out of my room. As I open the door a chilly breeze hits me in the face, so I close the door quickly."
 
     "I remember that scarf Rose gave me yesterday so I grab it and wrap it around my neck."
-
+    show bg pasillodorm with fade
     "I gaze at the clock for a second. I’m running late for my first class. I quickly open the door and start walking rather fast towards the stairwell."
 
     "I’m so troubled by yesterday’s turn of events that I didn’t notice someone standing after a corner and end up bumping into her."
-
+    $ rose = "happy"
+    show rose
     j "Sorry I didn't notice you were standing there, my bad"
 
     "As I’m getting up I notice who is it that I bumped into."
@@ -452,36 +461,37 @@ label start:
     "I’m embarrassed so I quickly look away from her. But she's staring at me. I start to get more nervous, is there something in my face?"
 
     "After a couple of uncomfortable seconds she breaks the silence."
-
+    $ rose = "surp"
     r "Where did you get that scarf?"
 
     "I’m confused by the question so I don’t reply immediately."
 
     j "What do you mean, you gave it to me yesterday when you were on that foul mood…"
-
+    $ rose = "surp2"
     "I look up so I can see her face for a second. Her eyes are wide open like plates and she is frozen, paralyzed."
-
+    $ rose = "sad"
     "She wakes up from the shock and tries to escape, but i’m faster so I grab her by the wrist before she can even start running away."
-
+    $ rose = "sad2"
     "I turn her around so I can see her face again, she is crying. I don’t know what to do so I try to comfort her the only way I know."
     "I pat her on the head a couple of times and wipe her tears with my sleeve."
-
+    $ rose = "sad"
     j "Hey, everything is going to be alright, just tell me what happened when you are ready, ok?"
-
+    $ rose = "sad3"
     "At this moment she loses control over her emotions and starts to cry intensely."
-
+    $ rose = "sad"
     r "I’m sorry…. I will"
-
+    hide rose
     "At this point we are so late for our first class that there is no point in hurrying anymore. We walk calmly towards the University. I don’t let go her hand, she needs this."
 
     "After a prolonged silence in our journey she mumbles something."
-
+    $ rose = "sad"
+    show rose
     r "I’m sick and I’m not in control of what I do sometimes. Didn’t even remember what I did yesterday. I hope you can forgive me…"
 
     j "Don’t trouble yourself with it Rose, anyway, you gave me this beautiful scarf."
-
+    $ rose = "happy"
     "Finally, she regains her usual silliness and laughs a little. It’s better when she is not sad."
-
+    hide rose
     "Classes at the University elapse without any memorable events. Boring day. I’m saved by the bell because I was falling asleep."
     "I get up and gather my things, doesn’t take me long because I don’t use notebooks, just a reader and a tablet. As I approach the exit someone tugs my sleeve lightly."
     "It’s Rose."
