@@ -42,7 +42,7 @@ image rosechall = "Rosechallenging.png"
 image rosectears = "Roseclosetears.png"
 image rosehappy = "Rosehappy.png"
 image rosehappy2 = "Rosehappy2.png"
-image rosehappyclose = "Rosehapyclose.png"
+image rosehappyclose = "Rosehappyclose.png"
 image rosehappyclosemo = "Rosehappyclosemopen.png"
 image rosehtears = "Rosehappytears.png"
 image rosehtears2 = "Rosehappytears2.png"
@@ -65,29 +65,29 @@ image rosesurp = "Rosesurp.png"
 image rosesurp2 = "Rosesurp2.png"
 image rosetsun = "Rosetsundere.png"
 #night rose images
-image roseblush = "NRoseblush.png"
-image roseblush1 = "NRoseblush1.png"
-image roseblush2 = "NRoseblush2.png"
-image roseblush3 = "NRoseblush3.png"
-image roseblush4 = "NRoseblush4.png"
-image rosebored = "NRosebored.png"
-image rosehappy = "NRosehappy.png"
-image rosehappy2 = "NRosehappy2.png"
-image rosehappy3 = "NRosehappy3.png"
-image rosemad = "NRosemad.png"
-image rosemad1 = "NRosemad1.png"
-image rosemad2 = "NRosemad2.png"
-image rosemad3 = "NRosemad3.png"
-image rosemad4 = "NRosemad4.png"
-image rosemad5 = "NRosemad5.png"
-image rosemad6 = "NRosemad6.png"
-image rosenaughty = "NRosenaughty.png"
-image rosenormal = "NRosenormal.png"
-image rosesad = "NRosesad.png"
-image rosesad2 = "NRosesad2.png"
-image rosesad3 = "NRosesad3.png"
-image rosesad5 = "NRosesad5.png"
-image rosesad6 = "NRosesad6.png"
+image nroseblush = "NRoseblush.png"
+image nroseblush1 = "NRoseblush1.png"
+image nroseblush2 = "NRoseblush2.png"
+image nroseblush3 = "NRoseblush3.png"
+image nroseblush4 = "NRoseblush4.png"
+image nrosebored = "NRosebored.png"
+image nrosehappy = "NRosehappy.png"
+image nrosehappy2 = "NRosehappy2.png"
+image nrosehappy3 = "NRosehappy3.png"
+image nrosemad = "NRosemad.png"
+image nrosemad1 = "NRosemad1.png"
+image nrosemad2 = "NRosemad2.png"
+image nrosemad3 = "NRosemad3.png"
+image nrosemad4 = "NRosemad4.png"
+image nrosemad5 = "NRosemad5.png"
+image nrosemad6 = "NRosemad6.png"
+image nrosenaughty = "NRosenaughty.png"
+image nrosenormal = "NRosenormal.png"
+image nrosesad = "NRosesad.png"
+image nrosesad2 = "NRosesad2.png"
+image nrosesad3 = "NRosesad3.png"
+image nrosesad5 = "NRosesad5.png"
+image nrosesad6 = "NRosesad6.png"
 
 label start:
     
@@ -97,7 +97,7 @@ label start:
     $ g = 0
     $ ans = 0
     
-    scene bg arbol
+    scene bg ventisca2
 
     "The air was cold, June felt the snowflakes touch his skin, but he was so cold they didn’t even melt."
     "It was not his first time in England but he was amazed at the white snow that covered the streets."
@@ -105,50 +105,70 @@ label start:
     "Since the atmosphere became so polluted with carbon dioxide and other gases, humans can no longer reproduce normally. The new human generation was created."
     "On the verge of extinction, old scientists discovered a way to create humans on labs."
     "These humans are special, they are custom made. The skin color, the hair, the eyes, the personality, everything you desire on a child is possible, for a price."
+    
+    scene bg aerepuerto with fade
     "June walked towards the airport Exit. Absorbed in his thoughts."
+    
+    
     "When he finally got out of that mess, he jumped on those fancy new self-driving eco cars that the British implemented a few years ago. He paid his fee and selected where he wanted to go, for a moment, he was free."
     "The ride towards the university was very fast, he didn’t even notice anything because after a few blocks he was fast asleep."
+    
+    
     "He stepped out of the car, took his luggage and walked to the building’s entrance. There was a big wooden sign on the outer wall that read: “Agnes Arber Dormitory”. He proceeded to the reception where he registered with his foreign ID."
     "He went up the old, wooden and squeaky steps towards his room in the 6th floor... At the end of such hike, he was exhausted, so he just collapsed on his bed and closed his eyes for a moment, or so he thought."
+    
+    show bg cuartodorm with fade
     "He suddenly felt like he was being watched from behind…"
     "He turned around just in time to see a shadow disappear by the door. He didn’t have the chance to look at it with detail. He was so scared that he locked the door and went to sleep."
     
     "*Day 1*"
-    
+    show bg cuartodorm with fade
     "I wake up by mere coincidence, didn’t even set an alarm or anything. Weird, i thought i didn’t sleep at all but it seems fatigue kicked in at last."
     "I am all settled in, just finished unpacking the things that I had on my suitcase and placed them on the only drawer the little room had. Just beside the pink duvet of the bed."
     "I go to the bathroom and take a shower. I see a hair dryer hanging in it’s holder."
     j "Hm… it’s weird that my room has a hair dryer. That is some quality appliances for the price I pay for this room."
+    
+    show bg pasillodorm with fade
     "Suddenly i hear someone knock on the door, and as i'm just getting out of the shower, just with a  towel on. I approach the door and proceed to open it."
     "There is an old lady at the other side, i'm kinda surprised but at the same time i'm just as embarrassed."
     ol "Just how indecent are women today! Cover yourself girl! I don’t care how flat chested you are, it is simply not right to open the door without a shirt!"
     "I'm confused."
+    show bg cuartodorm with fade
     "I close the door as fast as I can and grab the first shirt I find in my room and just place it in front of me."
     ol "Now, now. I’m just visiting my new tenant, it is not an inspection for now, just remember that a proper lady must be visible at all times!"
     "I'm still as confused as before."
     "With that the Old lady turns around and leaves my room. I check the clock. 6:45. I’m running late for my first class!. I brush my teeth hastily and run half dressed to the hall."
     "I’m paralyzed at my room’s entrance."
     "There is only girls at my floor not a single boy to be seen. I don’t know what to do so I just walk pass some sleepy looking girls and take the stairs to the first level." 
+    show bg pasillodorm with fade
+    show rosechall with fade
     "While i'm at it, i glimpse at a white haired girl gazing at my direction fixedly, maybe i’ve been exposed?." 
     "She simply turns around and lets me escape the maelstrom."
+    
+    hide rosechall with fade
+    show bg universidad with fade #aun no esta esta madre
     "It takes a 15 minutes walk to get to campus. It is an old looking building, it has a cliche looking main entrance with cherry trees on both sides, sadly it's winter so they do not have any leaves."
+    
+    show bg salonclase with fade
     "I walk into class and proceed to take a sit on the last row, near the window because I like feeling the wind in  my skin."
     "Not even 5 minutes go by when a crowd of students flood the room and take their places."
     "For a moment, i’m frozen in time, the same girl from this morning is moving in my direction."
     "Panic."
     "She walks the distance there is from the door to my place and proceeds to take a sit just at my side. I don't know yet, but i think I just dodged a bullet."
     "Class is just as boring as expected, so I feel relieved when the bell rings. I proceed to stand up and walk towards the class exit, but someone stands in front of me and doesn't let me get to it."
-    show rosehappy
-    with dissolve
+    show rosehappy with fade
     u "Hi I don’t believe i’ve introduced myself, i'm Rose, your neighbor. Pleased to meet you."
     j "Hi, my name is June, I moved in yesterday to your apartment complex and it looks like we are on the same… class."
     "I don’t even remember the name of the class we’d just recieved so I space out for a moment there, enough time for her to notice."
     hide rosehappy
-    with dissolve
-
+    show rosehappyclose
     "She chuckles a little bit when I try to remember the name of the course."
+    hide rosehappyclose
+    show rosehappy
     r "You seem kinda lost, Are you alright?, Maybe I can walk with you back to the dormitories."
     j "Don't you think it will be weird?"
+    hide rosehappy
+    show rosechall
     r "What do you mean? We girls should protect each other backs."
     "I see now, I was mistaken as a girl and put in the girls dorm. A foolish mistake, but I can not back down now, I have to keep my facade."
     
@@ -158,9 +178,16 @@ label start:
     
     #Continue Dialogue
     "Well i don’t want  to be exposed as a pervert in front of the university, so I will continue the act. I hope they don’t ask me to go swimming or something."
+    show bg calleinglesadia with fade
     "With that we set course towards the dorms. Rose leading me by the hand. Damn, girls don’t really mind physical contact between them. I try not to look too embarrassed, without success."
+    hide rosehappy
+    show rosechall
     "She looks at me for a few seconds, her stare is piercing my soul."
+    hide rosechall
+    show rosehappyclosemo
     "She keeps walking without saying a single word, we are halfway towards our destination."
+    hide rosehappyclosemo
+    show rosechall
     "After walking for awhile, she finally breaks the silence."
     r "I actually thought you were antisocial, I mean, today in the morning you actually ran away from the girls at the dorm. But now that I see how flustered you are I can’t do anything but chuckle a little at the thought"
     j "Actually I was kinda scared this morning."
@@ -173,37 +200,43 @@ label start:
             $ s = s + 1
         "I didn’t sleep well because there was someone watching me last night.":
             $ n = n + 1
-        
+    hide rosechall
+    show rosesurp
     "Rose is kinda surprised by my answer, but remains silent and just walks in front of me, she didn’t even flinch by my answer."
+    hide rosesurp
+    show rosehappy
+    show bg edifapt with fade
     "After a few minutes we arrive at the dorm, we part ways at the stairs because her room is to the right wing and mine to the left."
+    hide rosehappy
     "I’m emaciated. I check the clock. 3:45 pm."
     j "Damn, it’s not even dark yet…"
     j "Well I didn’t sleep much last night so the time is as right as it’s going to get"
     "It doesn’t take me long to fall asleep."
     
     "*Day 2*"
-
+    show bg cuartodorm with fade
     j "Damn, it’s morning already? Didn’t even had time to eat last night."
-
+    show bg pasillodorm with fade
     "I get ready as fast as I can and sneak up to the door to see if any of the girls is awake."
     "Deserted."
     "I take the opportunity and dash out of my room. As I am going downstairs my stomach reminds that I am actually starving."
+    show bg cafeteria with fade #falta esta madre tambien
     "I turn left on the building’s lobby and access the cafeteria."
     "It doesn’t take long for me to order some pancakes."
     "I feel something on my back so I try to turn to see what is it but before I can even check, something blinds me."
-
+    hide bg cafeteria with fade
     u "Guess who?"
 
     "I’m shocked for a sec there but then I remember that I don’t know anyone besides Rose so the answer is obvious."
 
     j "Rose, clearly the only early game prankster I know"
-
+    show rosehappy2
     r "You got me there haha"
-
+    show rosechall
     r "Not fair, probably you didn’t even know anyone else on the dorm!"
 
     "I cringe a little, she notices so I get a little bit more flustered."
-
+    show rosesurp
     r "Exchange students sure are weird, why are you red all the time?"
 
     menu:
@@ -220,44 +253,49 @@ label start:
             $ n = n + 1
             j "I’m actually kinda drunk at the moment"
             $ ans = 3
-
+    show rosesurp2
     "Her eyes are wide open. She cannot believe what I just said. But  she calms down after a few seconds."
 
     if ans == 1:
+        show rosesurp2
         r "Well, as long as you don’t hit on me!"
     elif ans == 2:
+        show rosemado
         r "You silly goof, how am I going to believe that?!"
     elif ans == 3:
+        show rosesurp
         r "Not possible, you’ve only lived on the dorm for a day"
 
     "Chatter after that goes without events so we head to our classroom."
-
+    show rosehappy
     j "Damn, Calculus in the morning really sucks"
-
+    show rosenaughty
     r "Well we can skip classes if you want..."
 
     "She says it with the most mischievous smile I’ve ever seen in my life."
 
     j "That is not a proper answer lady, what if we get caught?"
-
+    show rosesad2
     "She kinda looks sad at my answer, like a little puppy after being scolded."
     "I feel a little bad that I turned her down without even thinking in my response. "
 
     j "Damn, don’t do those puppy eyes, let’s go get some ice-cream at the mall..."
-
+    show rosehappy2
     "Suddenly she looks rejuvenated by my answer."
     "In fact she is so happy that I start to question if she really was sad at first or if it’s was just an act."
     "Well can’t do anything now, so I accept my destiny."
-
+    hide rosehappy2
+    show bg calleinglesadia with fade
     "We start to walk on the same direction to the University, but turned right a few blocks before."
+    show bg mall with fade #estamadre tampoco alv
     "After looking at the mall I think that just a really disoriented person would miss it, it has a huge Mall sign at the top and it’s surrounded by flat 1 level houses."
-
+    
     "We walk in and proceed to search for the ice-cream shop. It doesn’t take us long because it’s by the entrance of the second floor."
-
+    
     "Rose is always walking in front."
     "I wonder why she doesn’t like me to be ahead of her, maybe she feels like it’s her duty as an old-established student."
     "I don’t mind though, the less time she spends observing me, the less I’m likely to get caught."
-
+    show bg heladeria with fade #nein nein nein alvvv
     r "Can you give me a Vanilla cone please sir?"
 
     "The old man produced said cone with such dexterity that I’m actually perplexed."
@@ -272,25 +310,27 @@ label start:
 
     "I turn around with my cone and proceed to take a sit on the bench that Rose is sitting in."
     "I don’t know why but she is staring at my cone intensely."
-
+    show rosechall
     j "Do you want to try it?"
-
+    show rosehappy
     r "It’s not that, I’m kinda confused that you picked those two flavours."
     r "I mean, probably one will be stronger than the other and it will end up tasting just like it…"
-
+    
     j "Well that’s not how I see it, let me explain."
+    show rosesurp
     j "It’s not two different things, they are part of one whole, like yin and yang they are not trying to dominate the universe but coexist in balance."
     j "Sure Vanilla is great alone and so is Strawberry, but together is where they really shine."
-
+    
     "I don't know if what I said was that weird but Rose is staggered. It takes her a few seconds to recompose herself."
-
+    show rosehappy
     r "Yeah I understand what you mean. I’m not feeling well right now so maybe I should go back to my room…"
 
     j "Do you want me to escort you?"
-
+    show rosechall
     r "No. I’m fine, you should probably head back to our second class, maybe you can catch it up"
 
     "I’m kinda confused but it doesn’t matter as Rose just stands up and starts walking towards the exit."
+    hide rosechall with fade
     "I can only watch her as she finally exits the building. Damn she is pretty. But that feeling doesn’t last long because I realize that I may have fucked up something with my analogy."
     "I spent the next half an hour trying my best to understand her without success."
 
@@ -299,16 +339,16 @@ label start:
     "Well I’ve got to make up with her somehow."
 
     "After a few minutes of critical thinking I decide to buy her something. I don’t know what she likes but whatever, can’t get any worse, right?"
-
+    show bg mall with fade #alv
     "I spend the rest of the day searching for something, finally I decide to buy her some chocolates."
 
     j "I’ve never met a sane person who doesn’t like chocolate, this should be alright"
-
+    show bg calleinglesadia with fade
     "I proceed to buy the chocolate at the convenience store and start to head back to my dorm."
-
+    show bg edifapt with fade
     "Time sure flies fast, after a few minutes I’m standing in front of the dorm, didn’t even notice the time it took me to get there."
     "Whatever, I better give her the chocolate today, sure, it’s dark but, she’s probably still awake."
-
+    show bg pasillodorm with fade
     "I walk into the dorm and to my surprise there’s no one on the lobby. Probably all of them are already asleep. I take the stairs and in a flash I’m in front of her room."
     "I hesitate for a second then I proceed to knock on the door. "
 
@@ -322,28 +362,30 @@ label start:
     u "What do you want with me woman?"
 
     "Wait a second, I know that voice, it's Rose’s, isn’t it?. I turn around to confirm it"
-
+    show nrosemad5
     "I was right, it is her."
 
     j "Rose why are you doing this…?"
 
     "Wait a second why is her hair red? Am I already asphyxiating?"
     "No...something's not right."
-
+    hide nrosemad5
+    show nrosemad
     j "I just wanted to give you this chocolat…"
 
     "I haven't even finished my question when she snaps the bar of chocolate out of my hand. Then as quick as lightning she closes the door of her room."
     "Then I hear something muzzled on the distance."
-
+    hide nrosemad
+    show nrosemad2
     r "Keep the scarf, I was going to give it to you anyway, you seemed cold this morning..."
-
+    hide nrosemad2 with dissolve
     "The rest is inaudible, but i think I got the important part anyway. I check the scarf, it's hand made with red and white candy floss, very warm at the touch."
     "I don’t know what to think I’m more confused now that I was at the mall."
-
+    show bg cuartodorm with fade
     "Anyway, I’ll ask her tomorrow about it. For now I’ll just go to sleep."
 
     "It doesn't take me long to get ready to sleep. As I jump in bed, wrapped in the warm Red-White scarf that Rose gave me, I quickly fall asleep."
-
+    hide bg cuartodorm with fade
     "*Day 3*"
 
     "Thank God for that noisy alarm I selected. Just when my nightmare was getting out of hand, it woke me up."

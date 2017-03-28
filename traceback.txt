@@ -1,0 +1,77 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While loading <'Image' u'Rosehapyclose.png'>:
+  File "game/script.rpy", line 165, in script
+    "She chuckles a little bit when I try to remember the name of the course."
+IOError: Couldn't find file 'Rosehapyclose.png'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 165, in script
+    "She chuckles a little bit when I try to remember the name of the course."
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\exports.py", line 1147, in say
+    who(what, interact=interact)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\character.py", line 877, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\character.py", line 716, in do_display
+    **display_args)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\character.py", line 508, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2883, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\core.py", line 1955, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 427, in renpy.display.render.render_screen (gen\renpy.display.render.c:6806)
+    rv = render(root, width, height, 0, 0)
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "renpy/display/accelerator.pyx", line 108, in renpy.display.accelerator.transform_render (gen\renpy.display.accelerator.c:2027)
+    cr = render(child, widtho, heighto, st - self.child_st_base, at)
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\image.py", line 387, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\image.py", line 208, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\im.py", line 473, in render
+    im = cache.get(self)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\im.py", line 200, in get
+    surf = image.load()
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\display\im.py", line 524, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "C:\Users\Jose\Desktop\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'Rosehapyclose.png'.
+
+Windows-8-6.2.9200
+Ren'Py 6.99.12.4.2187
+Confederate Rose 1.0
