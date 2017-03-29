@@ -919,9 +919,9 @@ label neutral:
     "It’s Rose."
     $ nrose = "mad1"
     show nrose with dissolve
-    j "Darn, you scared me Rose, please don’t do that again"
+    j "Darn, you scared me Rose, please don’t do that again!"
     $ nrose = "naughty"
-    r "But you look cuter when you are scared like that"
+    r "But you look cuter when you are scared like that."
     j "Wha..?"
     "I figure it out, it’s the other Rose, day Rose doesn’t normally behave like this."
     $ nrose = "happy"
@@ -930,9 +930,10 @@ label neutral:
     $ nrose = "mad4"
     r "Then explain why I have different feelings than the other Rose."
     $ nrose = "mad"
-    r "Some things don’t bother her but they piss me off. Sometimes she does something she regrets but I think they are Ok. I’m always present in her even If I cannot make anything to change the course of action."
+    r "Some things don’t bother her but they piss me off."
+    r " Sometimes she does something she regrets but I think they are Ok. I’m always present in her even If I cannot make anything to change the course of action."
     $ nrose = "mad2"
-    r "I’m my own self, trapped inside her, powerless"
+    r "I’m my own self, trapped inside her, powerless."
     j "Well if it makes you feel better I like you as well, you may be evil and sadistic but those are your own traits and if you consider yourself as another person so will I"
     $ nrose = "happy2"
     r "Considerate for someone who the other one despises"
@@ -978,17 +979,21 @@ label neutral:
     $ nrose = "mad5"
     r "That's not the point I'm trying to make you smartass."
     "She gives me such a mean look that I may be facing satan himself, but it quickly changes to a more comprehensive one."
-    $ nrose = "blush2"
+    $ nrose = "mad5"
+    $ roseblush = "blushing"
+
     r "What I’m trying to say is that the other one wanted you to stay away from her, and I don’t want that… Do you understand?"
     j "What are you trying to say, that you don't dislike me as the other Rose?"
-    $ nrose = "blush3"
+    $ nrose = "mad0"
+
     r "You fool, are going to make me say it don’t you!?"
-    $ nrose = "blush4"
+    $ nrose = "mad"
     r "I think I’m in love with you, alright? I don’t want you to leave my side, do you understand?"
     "She approaches me, we are facing each other, just a few centimeters away from each other."
     "Suddenly she takes the initiative and kisses me, just a short one to see if I’m into her, I so I decide to assure her that I like her."
     "I kiss her again, longer this time."
     $ nrose = "sad"
+    $ roseblush = "notblushing"
     "After it she kinda looks sad so I have to ask her why."
     j "Isn’t this what you wanted?"
     r "You probably don’t even like me. I mean, I’m different from the Rose you know, I have more flaws, and nobody likes the way I am"
@@ -1000,7 +1005,6 @@ label neutral:
     "END"
     
     return
-
 
 
 
