@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 561: expected ':' not found.
-    else
-        ^
+File "game/script.rpy", line 102: invalid syntax
+        (0,0), ConditionSwitch($ roseblush == 'blushing', "images/speaking/blush.png",$ roseblush == 'notblushing', "images/speaking/blank.png"))
+                                ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

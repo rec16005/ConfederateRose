@@ -1,80 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Scale' <'Image' u'Black.png'> 1280 720 True>:
-  File "game/script.rpy", line 283, in script
-    u "Guess who?"
-IOError: Couldn't find file 'Black.png'.
+While running game code:
+  File "game/script.rpy", line 97, in script
+    image rose = LiveComposite(
+  File "game/script.rpy", line 102, in <module>
+    (0,0), ConditionSwitch("$roseblush == 'blushing'", "images/speaking/blush.png","$roseblush == 'notblushing'", "images/speaking/blank.png"))
+SyntaxError: invalid syntax (<none>, line 1)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 283, in script
-    u "Guess who?"
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
-    renpy.exports.say(who, what, interact=self.interact)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\exports.py", line 1147, in say
-    who(what, interact=interact)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\character.py", line 877, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\character.py", line 716, in do_display
-    **display_args)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\character.py", line 508, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2883, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\core.py", line 1955, in draw_screen
-    renpy.config.screen_height,
-  File "renpy/display/render.pyx", line 427, in renpy.display.render.render_screen (gen\renpy.display.render.c:6806)
-    rv = render(root, width, height, 0, 0)
-  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
-    rv = d.render(widtho, heighto, st, at)
-  File "renpy/display/accelerator.pyx", line 108, in renpy.display.accelerator.transform_render (gen\renpy.display.accelerator.c:2027)
-    cr = render(child, widtho, heighto, st - self.child_st_base, at)
-  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\image.py", line 387, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\image.py", line 208, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\im.py", line 473, in render
-    im = cache.get(self)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\im.py", line 200, in get
-    surf = image.load()
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\im.py", line 675, in load
-    child = cache.get(self.image)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\im.py", line 200, in get
-    surf = image.load()
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\display\im.py", line 524, in load
-    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
-  File "C:\Users\sebastian\Documents\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'Black.png'.
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\bootstrap.py", line 295, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\main.py", line 419, in main
+    game.context().run(node)
+  File "game/script.rpy", line 97, in script
+    image rose = LiveComposite(
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\ast.py", line 907, in execute
+    img = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\python.py", line 1743, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 102, in <module>
+    (0,0), ConditionSwitch("$roseblush == 'blushing'", "images/speaking/blush.png","$roseblush == 'notblushing'", "images/speaking/blank.png"))
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 1316, in ConditionSwitch
+    code = renpy.python.py_compile(cond, 'eval')
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\python.py", line 584, in py_compile
+    raise e
+SyntaxError: invalid syntax (<none>, line 1)
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
