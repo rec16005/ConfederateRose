@@ -1,32 +1,97 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 97, in script
-    image rose = LiveComposite(
-  File "game/script.rpy", line 102, in <module>
-    (0,0), ConditionSwitch("$roseblush == 'blushing'", "images/speaking/blush.png","$roseblush == 'notblushing'", "images/speaking/blank.png"))
-SyntaxError: invalid syntax (<none>, line 1)
+  File "game/script.rpy", line 962, in script
+    show nrose with dissolve
+NameError: name 'roseblush' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\bootstrap.py", line 295, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\main.py", line 419, in main
-    game.context().run(node)
-  File "game/script.rpy", line 97, in script
-    image rose = LiveComposite(
-  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\ast.py", line 907, in execute
-    img = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "game/script.rpy", line 962, in script
+    show nrose with dissolve
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\ast.py", line 1275, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\exports.py", line 1381, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2096, in do_with
+    clear=clear)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2883, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\core.py", line 1955, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 427, in renpy.display.render.render_screen (gen\renpy.display.render.c:6806)
+    rv = render(root, width, height, 0, 0)
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\transition.py", line 361, in render
+    top = render(self.new_widget, width, height, st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "renpy/display/accelerator.pyx", line 108, in renpy.display.accelerator.transform_render (gen\renpy.display.accelerator.c:2027)
+    cr = render(child, widtho, heighto, st - self.child_st_base, at)
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\image.py", line 387, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\image.py", line 208, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 318, in render
+    surf = render(self.child, width, height, st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 318, in render
+    surf = render(self.child, width, height, st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 1222, in render
+    self.update(st, at)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 1209, in update
+    child, redraw = self.function(st, at, *self.args, **self.kwargs)
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 1274, in condition_switch_show
+    return condition_switch_pick(switch), None
+  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 1267, in condition_switch_pick
+    if renpy.python.py_eval_bytecode(code):
   File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\python.py", line 1743, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 102, in <module>
-    (0,0), ConditionSwitch("$roseblush == 'blushing'", "images/speaking/blush.png","$roseblush == 'notblushing'", "images/speaking/blank.png"))
-  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 1316, in ConditionSwitch
-    code = renpy.python.py_compile(cond, 'eval')
-  File "C:\Users\Jose\Desktop\VN\renpy-6.99.12.4-sdk\renpy\python.py", line 584, in py_compile
-    raise e
-SyntaxError: invalid syntax (<none>, line 1)
+  File "<none>", line 1, in <module>
+NameError: name 'roseblush' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187

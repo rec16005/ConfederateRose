@@ -1,6 +1,9 @@
 # Script.rpy
-
-
+#transitions:
+transform pop:
+   yzoom 1.0
+   linear 0.125 yzoom 1.025
+   linear 0.125 yzoom 1.0
 init:
     $ s = 0 # this is a variable for bob's affection points throughout your game
     $ suspicion_max = 3 # this variable should be set to bob's maximum affection points
@@ -94,21 +97,6 @@ init python:
             renpy.music.stop()
             speaking== None
     speaker = renpy.curry(speaker_callback)   
-image rose = LiveComposite(
-    (584,720),
-    (0, 0), "rose[rose].png",
-    (0, 0), "rose[rose].png",
-    (0, 0), WhileSpeaking("Rose", "rose mouth normal", "rose[rose].png"),
-    (0,0), ConditionSwitch("roseblush == 'blushing'", "images/speaking/blush.png","roseblush == 'notblushing'", "images/speaking/blank.png"))
-
-image nrose = LiveComposite(
-    (584,720),
-    (0, 0), "Nrose[nrose].png",
-    (0, 0), "Nrose[nrose].png",
-    (0, 0), WhileSpeaking("Rose", "rose mouth night", "Nrose[nrose].png"),
-    (0,0), ConditionSwitch( "roseblush == 'blushing'", "images/speaking/blush.png", "roseblush == 'notblushing'", "images/speaking/blank.png"))
-
-
 
 define r = Character("Rose", color="#FE2E64",callback=speaker("Rose"),what_slow_cps=30)
 define j = Character("June", color="#2E64FE")
@@ -154,19 +142,22 @@ image bg universidad = im.Scale("Universidad.png", 1280, 720)
 image bg cafeteria = im.Scale("Cafeteria.png", 1280, 720)
 image bg black = im.Scale("Black.png", 1280, 720)
 
+
+
 image rose = LiveComposite(
     (584,720),
     (0, 0), "rose[rose].png",
     (0, 0), "rose[rose].png",
-    (0, 0), WhileSpeaking("Rose", "rose mouth normal", "rose[rose].png"))
-
+    (0, 0), WhileSpeaking("Rose", ConditionSwitch( "(sadrose != 'sad')", "rose mouth normal", "(sadrose == 'sad')", "rose mouth night"), "rose[rose].png"),
+    (0, 0), ConditionSwitch( "roseblush == 'blushing'", "images/speaking/blush.png", "roseblush == 'notblushing'", "images/speaking/blank.png"))
 
 
 image nrose = LiveComposite(
     (584,720),
     (0, 0), "Nrose[nrose].png",
     (0, 0), "Nrose[nrose].png",
-    (0, 0), WhileSpeaking("Rose", "rose mouth night", "Nrose[nrose].png"))
+    (0, 0), WhileSpeaking("Rose", ConditionSwitch( "nrose != 'happy'", "rose mouth night", "nrose == 'happy'", "rose mouth normal"), "Nrose[nrose].png"),
+    (0,0), ConditionSwitch( "roseblush == 'blushing'", "images/speaking/blush.png", "roseblush == 'notblushing'", "images/speaking/blank.png"))
 
 image rose mouth normal:
     "images/speaking/Rosespk.png"
@@ -218,7 +209,8 @@ label start:
     $ night = ""
     $ rose  = "happy"
     $ nrose = "mad"
-
+    $ roseblush = "notblushing"
+    $ sadrose='notsad'
     
     "The air was cold, June felt the snowflakes touch his skin, but he was so cold they didn’t even melt."
     "It was not his first time in England but he was amazed at the white snow that covered the streets."
@@ -236,32 +228,32 @@ label start:
     
     
     "He stepped out of the car, took his luggage and walked to the building’s entrance. There was a big wooden sign on the outer wall that read: “Agnes Arber Dormitory”. He proceeded to the reception where he registered with his foreign ID."
-    "He went up the old, wooden and squeaky steps towards his room in the 6th floor... At the end of such hike, he was exhausted, so he just collapsed on his bed and closed his eyes for a moment, or so he thought."
+    "He went up the old, wooden and squeaky steps towards his room in the 6th floor{w=.3}.{w=.3}.{w=.3}. At the end of such hike, he was exhausted, so he just collapsed on his bed and closed his eyes for a moment, or so he thought."
     
-    show bg cuartodorm with fade
+    scene bg cuartodorm with fade
     "He suddenly felt like he was being watched from behind…"
     "He turned around just in time to see a shadow disappear by the door. He didn’t have the chance to look at it with detail. He was so scared that he locked the door and went to sleep."
     
     "*Day 1*"
-    show bg cuartodorm with fade
+    scene bg cuartodorm with fade
     "I wake up by mere coincidence, didn’t even set an alarm or anything. Weird, i thought i didn’t sleep at all but it seems fatigue kicked in at last."
     "I am all settled in, just finished unpacking the things that I had on my suitcase and placed them on the only drawer the little room had. Just beside the pink duvet of the bed."
     "I go to the bathroom and take a shower. I see a hair dryer hanging in it’s holder."
     j "Hm… it’s weird that my room has a hair dryer. That is some quality appliances for the price I pay for this room."
     
-    show bg pasillodorm with fade
+    scene bg pasillodorm with fade
     "Suddenly i hear someone knock on the door, and as i'm just getting out of the shower, just with a  towel on. I approach the door and proceed to open it."
     "There is an old lady at the other side, i'm kinda surprised but at the same time i'm just as embarrassed."
     ol "Just how indecent are women today! Cover yourself girl! I don’t care how flat chested you are, it is simply not right to open the door without a shirt!"
     "I'm confused."
-    show bg cuartodorm with fade
+    scene bg cuartodorm with fade
     "I close the door as fast as I can and grab the first shirt I find in my room and just place it in front of me."
     ol "Now, now. I’m just visiting my new tenant, it is not an inspection for now, just remember that a proper lady must be visible at all times!"
     "I'm still as confused as before."
     "With that the Old lady turns around and leaves my room. I check the clock. 6:45. I’m running late for my first class!. I brush my teeth hastily and run half dressed to the hall."
     "I’m paralyzed at my room’s entrance."
     "There is only girls at my floor not a single boy to be seen. I don’t know what to do so I just walk pass some sleepy looking girls and take the stairs to the first level." 
-    show bg pasillodorm with fade
+    scene bg pasillodorm with fade
     show rose chall with dissolve
     "While i'm at it, i glimpse at a white haired girl gazing at my direction fixedly, maybe i’ve been exposed?." 
     "She simply turns around and lets me escape the maelstrom."
@@ -270,7 +262,7 @@ label start:
     scene bg universidad with fade #aun no esta esta madre
     "It takes a 15-minute walk to get to campus. It is an old looking building, it has a cliche looking main entrance with cherry trees on both sides, sadly it's winter so they do not have any leaves."
     
-    show bg salonclase with fade
+    scene bg salonclase with fade
     "I walk into class and proceed to take a sit on the last row, near the window because I like feeling the wind in  my skin."
     "Not even 5 minutes go by when a crowd of students flood the room and take their places."
     "For a moment, i’m frozen in time, the same girl from this morning is moving in my direction."
@@ -298,20 +290,27 @@ label start:
     
     #Continue Dialogue
     "Well i don’t want  to be exposed as a pervert in front of the university, so I will continue the act. I hope they don’t ask me to go swimming or something."
-    show bg calleinglesadia with fade
+    scene bg calleinglesadia with fade
     "With that we set course towards the dorms. Rose leading me by the hand. Damn, girls don’t really mind physical contact between them. I try not to look too embarrassed, without success."
     show rose chall with dissolve
     "She looks at me for a few seconds, her stare is piercing my soul."
     $ rose = "happyclosemo"
-    
-    show rose happyclosemo with dissolve
+    show rose with dissolve
     "She keeps walking without saying a single word, we are halfway towards our destination."
-    hide rose happyclosemo
-    show rose chall with dissolve
+    $ rose = "sad"
+    $ sadrose='sad'
     "After walking for awhile, she finally breaks the silence."
-    r "I actually thought you were antisocial, I mean, today in the morning you actually ran away from the girls at the dorm. But now that I see how flustered you are I can’t do anything but chuckle a little at the thought"
-    j "Actually I was kinda scared this morning."
-    r "Scared? Why?"
+    r "I actually thought you were antisocial."
+    r " I mean, today in the morning you actually ran away from the girls at the dorm.{w}"
+    $ sadrose='not'
+    $ rose = "happy"
+    extend" But now that I see how flustered you are I can’t do anything but chuckle a little at the thought."
+    j "Actually,{w=.5} I was kinda scared this morning."
+    
+    $ rose = "happy2"
+    r "Scared?{w=.3}"
+    $ rose = "surp"
+    extend" Why?"
     
     menu: 
         "There was a cockroach on my bathroom this morning.": 
@@ -320,48 +319,51 @@ label start:
             $ s = s + 1
         "I didn’t sleep well because there was someone watching me last night.":
             $ n = n + 1
-    hide rose chall
     $ rose = "surp"
-    show rose surp with dissolve
-    "Rose is kinda surprised by my answer, but remains silent and just walks in front of me, she didn’t even flinch by my answer."
-    hide rose surp
-    show rose happy with dissolve
-    show bg edifapt with fade
+    "Rose is kinda surprised by my answer, but remains silent and just walks in front of me, she didn’t even flinch."
+    show rose with dissolve
+    scene bg edifapt with fade
     "After a few minutes we arrive at the dorm, we part ways at the stairs because her room is to the right wing and mine to the left."
-    hide rose happy
+    hide rose with dissolve
     "I’m emaciated. I check the clock. 3:45 pm."
     j "Damn, it’s not even dark yet…"
-    j "Well I didn’t sleep much last night so the time is as right as it’s going to get"
+    j "Well I didn’t sleep much last night,{w} so the time is as right as it’s going to get."
+    scene black with dissolve
     "It doesn’t take me long to fall asleep."
     
     "*Day 2*"
-    show bg cuartodorm with fade
+    "Alarm" "*Riiing!!*" with Shake((0, 0, 0, 0), 0.5, dist=15)
+    scene bg cuartodorm with fade
     j "Damn, it’s morning already? Didn’t even had time to eat last night."
-    show bg pasillodorm with fade
+    scene bg pasillodorm with fade
     "I get ready as fast as I can and sneak up to the door to see if any of the girls is awake."
     "Deserted."
     "I take the opportunity and dash out of my room. As I am going downstairs my stomach reminds that I am actually starving."
-    show bg cafeteria with fade 
+    scene bg cafeteria with fade 
     "I turn left on the building’s lobby and access the cafeteria."
     "It doesn’t take long for me to order some pancakes."
     "I feel something on my back so I try to turn to see what is it but before I can even check, something blinds me."
-    hide bg cafeteria with fade
-    show bg black with dissolve
+    
+    scene bg black with dissolve
     u "Guess who?"
 
-    "I’m shocked for a sec there but then I remember that I don’t know anyone besides Rose so the answer is obvious."
+    "I’m shocked for a sec there but then I remember that I don’t know anyone besides Rose,{w=.3} so the answer is obvious."
     
-    j "Rose, clearly the only early game prankster I know"
-    hide bg black with fade
-    show bg cafeteria with fade
+    j "Rose, clearly the only early game prankster I know."
+   
+    scene bg cafeteria with fade
     $ rose = "happy2"
     show rose with dissolve
-    r "You got me there haha"
+    r "You got me there!"
+    $ rose = "happyclosemo"
+    show rose at pop
+    extend" hahahahaha!"
     $ rose = "challenging"
     r "Not fair, probably you didn’t even know anyone else on the dorm!"
 
     "I cringe a little, she notices so I get a little bit more flustered."
-    $ rose = "surp"
+    $ rose = "sad"
+    $ sadrose='sad'
     r "Exchange students sure are weird, why are you red all the time?"
 
     menu:
@@ -369,31 +371,36 @@ label start:
             $ g = g + 1
             $ s = s + 1
             $ ans = 1
-            j "I’ve never been approached by such a beautiful woman before"
+            j "I’ve never been approached by such a beautiful woman before."
         "I’m actually a guy":
             $ b = b + 1
             j "I’m actually a guy"
             $ ans = 2
         "I’m actually kinda drunk at the moment":
             $ n = n + 1
-            j "I’m actually kinda drunk at the moment"
+            j "I’m actually kinda drunk at the moment."
             $ ans = 3
-    show rose surp2 with dissolve
+    show rose with dissolve
     "Her eyes are wide open. She cannot believe what I just said. But  she calms down after a few seconds."
-
+    $ sadrose='not'
     if ans == 1:
-        $ rose = "surp2"
+        
+        $ rose = "surp"
+        $ roseblush = "blushing"
+        show rose at pop
         r "Well, as long as you don’t hit on me!"
+        $ roseblush = "notblushing"
     elif ans == 2:
+        ''
         $ rose = "madO"
         r "You silly goof, how am I going to believe that?!"
     elif ans == 3:
         $ rose = "surp"
-        r "Not possible, you’ve only lived on the dorm for a day"
-
+        r "Not possible, you’ve only lived on the dorm for a day."
+    $ rose = "happy"
     "Chatter after that goes without events so we head to our classroom."
     $ rose = "happy"
-    j "Damn, Calculus in the morning really sucks"
+    j "Damn, Calculus in the morning really sucks."
     $ rose = "naughty"
     r "Well we can skip classes if you want..."
 
@@ -401,11 +408,16 @@ label start:
 
     j "That is not a proper answer lady, what if we get caught?"
     $ rose = "sad2"
+    $ sadrose='sad'
     "She kinda looks sad at my answer, like a little puppy after being scolded."
     "I feel a little bad that I turned her down without even thinking in my response. "
 
-    j "Damn, don’t do those puppy eyes, let’s go get some ice-cream at the mall..."
+    j "Damn, don’t do those puppy eyes, let’s go get some ice-cream at the mall{w=.3}.{w=.3}.{w=.3}."
+    $ sadrose='not'
     $ rose = "happy2"
+    show rose at pop
+      
+      
     "Suddenly she looks rejuvenated by my answer."
     "In fact she is so happy that I start to question if she really was sad at first or if it’s was just an act."
     "Well can’t do anything now, so I accept my destiny."
@@ -472,7 +484,7 @@ label start:
     j "I’ve never met a sane person who doesn’t like chocolate, this should be alright"
     scene bg calleinglesadia with fade
     "I proceed to buy the chocolate at the convenience store and start to head back to my dorm."
-    show bg edifapt with fade
+    scene bg edifapt with fade
     "Time sure flies fast, after a few minutes I’m standing in front of the dorm, didn’t even notice the time it took me to get there."
     "Whatever, I better give her the chocolate today, sure, it’s dark but, she’s probably still awake."
     scene bg pasillodorm with fade
@@ -497,65 +509,79 @@ label start:
     j "Rose why are you doing this…?"
 
     "Wait a second why is her hair red? Am I already asphyxiating?"
-    "No...something's not right."
+    "No{w=.3}.{w=.3}.{w=.3}.something's not right."
     $ nrose = "mad"
-    j "I just wanted to give you this chocolat…"
+    j "I just wanted to give you this chocola--{w=.8}{nw}"
 
-    "I haven't even finished my question when she snaps the bar of chocolate out of my hand. Then as quick as lightning she closes the door of her room."
+    "I haven't even finished my question when she snaps the bar of chocolate out of my hand.{w=.5} Then as quick as lightning, she closes the door of her room."
     "Then I hear something muzzled on the distance."
     $ nrose = "mad2"
-    r "Keep the scarf, I was going to give it to you anyway, you seemed cold this morning..."
+    r "Keep the scarf, I was going to give it to you anyway,{w=.5}"
+    $ nrose = "mad3"
+    extend" you seemed cold this morning..."
     hide nrose with dissolve
     "The rest is inaudible, but i think I got the important part anyway. I check the scarf, it's hand made with red and white candy floss, very warm at the touch."
     "I don’t know what to think I’m more confused now that I was at the mall."
-    show bg cuartodorm with fade
+    scene bg cuartodorm with fade
     "Anyway, I’ll ask her tomorrow about it. For now I’ll just go to sleep."
 
     "It doesn't take me long to get ready to sleep. As I jump in bed, wrapped in the warm Red-White scarf that Rose gave me, I quickly fall asleep."
     hide bg cuartodorm with fade
-    show bg black with dissolve
+    scene bg black with dissolve
     "*Day 3*"
-    show bg cuartodorm with fade
+    scene bg cuartodorm with fade
+    "Alarm" "*Riiing!!*" with Shake((0, 0, 0, 0), 0.5, dist=15)
     "Thank God for that noisy alarm I selected. Just when my nightmare was getting out of hand, it woke me up."
 
-    "I quickly get up and in less than 20 I’m ready to go out of my room. As I open the door a chilly breeze hits me in the face, so I close the door quickly."
+    "I quickly get up and in less than 20,{w=.5} I’m ready to go out of my room.{w=.5} As I open the door a chilly breeze hits me in the face, so I close the door quickly."
 
     "I remember that scarf Rose gave me yesterday so I grab it and wrap it around my neck."
-    show bg pasillodorm with fade
+    scene bg pasillodorm with fade
     "I gaze at the clock for a second. I’m running late for my first class. I quickly open the door and start walking rather fast towards the stairwell."
+    "*Bump!!*" with Shake((0, 0, 0, 0), 0.5, dist=15)
+    "I’m so troubled by yesterday’s turn of events that I didn’t notice someone standing after a corner and end up bumping into her." 
 
-    "I’m so troubled by yesterday’s turn of events that I didn’t notice someone standing after a corner and end up bumping into her." with Shake((0, 0, 0, 0), 0.5, dist=15)
-    $ rose = "happy"
+    $ rose = "sad"
+    $ sadrose='sad'
     show rose with dissolve
-    j "Sorry I didn't notice you were standing there, my bad"
+    j "Sorry I didn't notice you were standing there, my bad."
 
-    "As I’m getting up I notice who is it that I bumped into."
+    "As I get up, I notice who is it that I bumped into."
 
     "It’s Rose."
 
     "I’m embarrassed so I quickly look away from her. But she's staring at me. I start to get more nervous, is there something in my face?"
-
+    
     "After a couple of uncomfortable seconds she breaks the silence."
+
     $ rose = "surp"
     r "Where did you get that scarf?"
 
     "I’m confused by the question so I don’t reply immediately."
 
-    j "What do you mean, you gave it to me yesterday when you were on that foul mood…"
+    j "What do you mean?{w=.3} You gave it to me yesterday when you were on that foul mood…"
+    $ sadrose='not'
     $ rose = "surp2"
+
     "I look up so I can see her face for a second. Her eyes are wide open like plates and she is frozen, paralyzed."
-    $ rose = "sad"
-    "She wakes up from the shock and tries to escape, but i’m faster so I grab her by the wrist before she can even start running away."
-    $ rose = "sad2"
+    
+    hide rose with Dissolve(0.25)
+    "She wakes up from the shock and tries to escape,"
+    $ sadrose='sad'
+    $ rose = "sad3"
+    show rose with Dissolve(0.25)
+
+    extend" but i’m faster so I grab her by the wrist before she can even start running away."
+    
     "I turn her around so I can see her face again, she is crying. I don’t know what to do so I try to comfort her the only way I know."
     "I pat her on the head a couple of times and wipe her tears with my sleeve."
-    $ rose = "sad"
+    $ rose = "sad2"
     j "Hey, everything is going to be alright, just tell me what happened when you are ready, ok?"
     $ rose = "sad3"
     "At this moment she loses control over her emotions and starts to cry intensely."
-    $ rose = "sad"
-    r "I’m sorry…. I will"
-    hide rose
+    
+    r "I’m sorry…. I will."
+    hide rose with dissolve
     "At this point we are so late for our first class that there is no point in hurrying anymore. We walk calmly towards the University. I don’t let go her hand, she needs this."
 
     "After a prolonged silence in our journey she mumbles something."
@@ -587,20 +613,20 @@ label start:
     "We small-talk for 20 minutes or so, when Rose decides to acknowledge our serious matter."
     $ rose = "sad"
     show rose with dissolve
-    r "Today I told you that I was sick, well...that is not entirely true"
+    r "Today I told you that I was sick, well{w=.3}.{w=.3}.{w=.3}.{w=.3}that is not entirely true."
     $ rose = "sad"
-    r "You see, remember we are not normal humans June, we were created on labs by scientists"
+    r "You see,{w=.3} remember we are not normal humans, June. We were created on labs by scientists."
 
     "I nod so she knows I understand what she means."
     $ rose = "surp"
-    r "You see I was one of the first successful tests and have some ‘bugs’ on my DNA if you can call them like that"
+    r "You see I was one of the first successful tests and have some ‘bugs’ on my DNA.{w} If you can call them like that."
     $ rose = "sad2"
     r "I’m one person at night and another one by day…"
     
     r "The other Rose…she is not a kind person."
     $ rose = "madclose"
     r "She’s dangerous."
-    hide rose with fade
+    hide rose with dissolve
     "She goes on with more deep information about herself, but that first part was so intense that left me thinking for a while."
 
     "After a while we’re just sipping our near-cold drinks and staring out the window. I decide to tell her what I think about her problem."
@@ -612,7 +638,9 @@ label start:
             j "I like you the way you are, with flaws and everything"
             $ b = b + 1
         "Don’t give up hope, you can be cured and live a normal life":
-            j "Don't’ give up just yet. Medicines advances so quickly that maybe in a couple of years you can be treated and finally live a normal life. Hope is the last things that dies and I’ll be right here for you Rose"
+            j "Don't’ give up just yet."
+            j"Medicines advances so quickly that maybe in a couple of years you can be treated and finally live a normal life."
+            j"Hope is the last thing that dies and I’ll be right here for you, Rose."
             $ g = g + 1
         "I don’t feel comfortable talking about this kind of stuff with girls, sorry":
             $ s = s + 1
@@ -638,8 +666,8 @@ label bad:
     $ rose = "madfrown"
     "Rose seems confused at my answer, but tries to hide her confusion behind her drink. She takes a few slow sips and looks out the window."
     "We stay still for a few seconds, then she breaks the silence with a quick gaze and a puzzling statement."
-    r "If I didn’t know you are a girl, I would definitely mistake you for a guy..."
-    "I don’t know how to take this, maybe she discovered my secret way to fast. I should take this opportunity to clear the mistake they made at the dorms..."
+    r "If I didn’t know you are a girl, I would definitely see you as a guy{w=.3}.{w=.3}.{w=.3}."
+    "I don’t know how to take this, maybe she discovered my secret way too fast.{w} I should take this opportunity to clear the mistake they made at the dorms{w=.3}.{w=.3}.{w=.3}."
     j "You got me… They made a mistake at the dorms, I’m actually not a girl, but I think the photo I sent on my registry application fooled them." 
     j "Maybe I should cut my hair, sadly I like it the way it is right now."
     $ rose = "challenging"
@@ -698,30 +726,34 @@ label bad:
 #Good Ending
 label good:
     $ rose = "happy"
+    $ sadrose='not'
     "Rose smiles a little after my answer, but happiness doesn’t last long enough as she soon starts to weep a little."
     $ rose = "closetears"
     j "What did I say?, Did I hurt you in someway?"
     $ rose = "happytears2"
     r "No, it’s just, you gave me hope for a minute there…"
-    r "You see... doctors said that my condition was untreatable..."
+    r "You see{w=.3}.{w=.3}.{w=.3}. Doctors said that my condition was untreatable{w=.3}.{w=.3}.{w=.3}."
 
     j "That may be the case today but together we can search for it someway"
     j "We are on a biology-oriented university for that matter"
     $ rose = "sad4"
+    $ sadrose='sad'
     "It seems I succeed in calming her down a bit. Maybe we should go somewhere else, I feel like she opened to me in some way maybe I should make up for that."
 
     j "Hey , I know we’ve known each other for like a week, but you know you can trust me… anything you need that I can help you with you can tell me."
     $ rose = "sad2"
+
     r "I know…"
 
     "I should really change the mood someway or the rest of the evening Is going to be pretty unpleasant."
 
-    j "Maybe we can hit up the theater and watch a movie or something..."
+    j "Maybe we can hit up the theater and watch a movie or something{w=.3}.{w=.3}.{w=.3}."
     $ rose = "surp"
     "She seems confused for a second there, but then I remember something that maybe I haven’t told her yet. Yes you guessed right, she still doesn’t know I’m a guy."
 
     j "I have a confession too Rose…"
     $ rose = "surp2"
+
     r "Huh?"
 
     j "You see, the day I came to England they made a mistake on my University inscription, the truth is that I’m a man…"
@@ -732,6 +764,7 @@ label good:
 
     "I cannot move, there is something holding me up, i quickly notice that Rose is holding up my sleeve and she wont let me advance."
     $ rose = "madfrown"
+    $ sadrose='not'
     show rose with dissolve
     "She points at the place where I was sitting, so I assume she want’s me to sit down over there. After I do it, she takes another few seconds and starts talking."
 
@@ -739,20 +772,23 @@ label good:
 
     j "Wha.. how?"
     $ rose = "happy"
-    r "Well... nobody noticed it but you entered the dorm wearing your casual clothes, and they were man-looking so I suspected it, later that night I went to check, well actually the other Rose went to check, and we found your ID on your luggage so basically we knew."
+    r "Well{w=.3}.{w=.3}.{w=.3}. nobody noticed it but you entered the dorm wearing your casual clothes, and they were man-looking, so I suspected it."
+    r "Later that night I went to check,{w=.5} well actually the other Rose went to check,{w=.5} and we found your ID on your luggage..."
+    r "So basically we knew."
 
     j "You checked my backpack?!?"
     $ rose = "sad2"
-    r "Sorry I just couldn’t resist"
+    r "Sorry I just couldn’t resist."
 
     j "Nah I was the one who was wrong, I should’ve told you from the start."
-    j "So, we are even I suppose"
+    j "So, we are even,{w=.5} I suppose."
     $ rose = "happy2"
-    r "Yup… Nice to meet you"
-
+    r "Yup… Nice to meet you."
+    
     j "Stop fooling around you doofus, how about that movie then?"
     $ rose = "laughing"
-    r "Damn, straight for the vein, guys have less tact than I’ve thought..."
+
+    r "Damn, straight for the vein, guys have less tact than I’ve thought{w=.3}.{w=.3}.{w=.3}."
 
     "I think I made a funny face at that statement because she looks another way quickly."
     $ rose = "happy2"
@@ -769,7 +805,7 @@ label good:
     scene bg cuartodorm with fade
     "We enter the building, climb up the stairs and part ways on the hall. I enter my room and go straight to sleep. This time I set up an alarm because I don’t want to screw up this date."
     scene bg black with fade
-    a "***beep beep***"
+    a "***beep! beep!***" with Shake((0, 0, 0, 0), 0.5, dist=15)
     scene bg cuartodorm with fade
     "That annoying alarm wakes me up. After I come back to my senses it is not so bad, I have to get ready fast or I’ll be late."
 
@@ -835,14 +871,17 @@ label good:
 
     "She whispers in my ear: "
     $ rose = "closetears"
+    $ sadrose='sad'
     r "I’m shocked, it is now nighttime, but I’m still my normal self"
 
     j "How is that even possible!?"
     $ rose = "happytears"
+    $ sadrose='not'
     r "I don’t really know, but today was a special day for me, I shared memories with someone I care about… I think you made this possible"
     r "The truth is that I care about you… No. That’s not true, since the moment that I first saw you, you moved something inside me."
     r "I started to look forward to our next meeting, I could barely sleep. But today all my doubts were washed away…"
     $ rose = "surp2"
+    $ roseblush = 'blushing'
     r "I realized today that I’m in love with you."
 
     "I don’t even hesitate, I want her to know that I feel the same way she does, but the words don’t come out."
@@ -880,7 +919,7 @@ label neutral:
     "It’s Rose."
     $ nrose = "mad1"
     show nrose with dissolve
-    j "Darn you scared me Rose, please don’t do that again"
+    j "Darn, you scared me Rose, please don’t do that again"
     $ nrose = "naughty"
     r "But you look cuter when you are scared like that"
     j "Wha..?"
@@ -961,3 +1000,11 @@ label neutral:
     "END"
     
     return
+
+
+
+
+
+
+
+    
