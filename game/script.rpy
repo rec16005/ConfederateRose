@@ -558,6 +558,8 @@ label start:
         jump good
     elif n >= 2:
         jump neutral
+    else:
+        jump bad
     
     
     

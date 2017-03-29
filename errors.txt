@@ -2,12 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 227: expected statement.
-    rose = "happyclosemo"
-         ^
+File "game/script.rpy", line 561: expected ':' not found.
+    else
+        ^
 
-File "game/script.rpy", line 246: expected statement.
-    rose = "surp"
-         ^
-
-Ren'Py Version: Ren'Py 6.99.12.3.2123
+Ren'Py Version: Ren'Py 6.99.12.4.2187
