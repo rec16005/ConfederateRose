@@ -5,6 +5,64 @@ init:
     $ s = 0 # this is a variable for bob's affection points throughout your game
     $ suspicion_max = 3 # this variable should be set to bob's maximum affection points
 
+    python:
+    
+        import math
+        class Shaker(object):
+        
+            anchors = {
+                'top' : 0.0,
+                'center' : 0.5,
+                'bottom' : 1.0,
+                'left' : 0.0,
+                'right' : 1.0,
+                }
+        
+            def __init__(self, start, child, dist):
+                if start is None:
+                    start = child.get_placement()
+                #
+                self.start = [ self.anchors.get(i, i) for i in start ]  # central position
+                self.dist = dist    # maximum distance, in pixels, from the starting point
+                self.child = child
+                
+            def __call__(self, t, sizes):
+                # Float to integer... turns floating point numbers to
+                # integers.                
+                def fti(x, r):
+                    if x is None:
+                        x = 0
+                    if isinstance(x, float):
+                        return int(x * r)
+                    else:
+                        return x
+
+                xpos, ypos, xanchor, yanchor = [ fti(a, b) for a, b in zip(self.start, sizes) ]
+
+                xpos = xpos - xanchor
+                ypos = ypos - yanchor
+                
+                nx = xpos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
+                ny = ypos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
+
+                return (int(nx), int(ny), 0, 0)
+        
+        def _Shake(start, time, child=None, dist=100.0, **properties):
+
+            move = Shaker(start, child, dist=dist)
+        
+            return renpy.display.layout.Motion(move,
+                          time,
+                          child,
+                          add_sizes=True,
+                          **properties)
+
+        Shake = renpy.curry(_Shake)
+
+
+
+
+
 init python:
  #   speaker = None
     speaking = None
@@ -38,10 +96,19 @@ init python:
     speaker = renpy.curry(speaker_callback)   
 image rose = LiveComposite(
     (584,720),
-    (0, 0), "rosehappy.png",
-    (0, 0), "rosehappy.png",
-    (0, 0), WhileSpeaking("Rose", "rose mouth normal", "rosehappy.png"),)
-    
+    (0, 0), "rose[rose].png",
+    (0, 0), "rose[rose].png",
+    (0, 0), WhileSpeaking("Rose", "rose mouth normal", "rose[rose].png"),
+    (0,0), ConditionSwitch( "roseblush == 'blushing'", "images/speaking/blush.png", "roseblush == 'notblushing'", "images/speaking/blank.png"))
+
+image nrose = LiveComposite(
+    (584,720),
+    (0, 0), "Nrose[nrose].png",
+    (0, 0), "Nrose[nrose].png",
+    (0, 0), WhileSpeaking("Rose", "rose mouth night", "Nrose[nrose].png"),
+    (0,0), ConditionSwitch( "roseblush == 'blushing'", "images/speaking/blush.png", "roseblush == 'notblushing'", "images/speaking/blank.png"))
+
+
 
 define r = Character("Rose", color="#FE2E64",callback=speaker("Rose"),what_slow_cps=30)
 define j = Character("June", color="#2E64FE")
@@ -457,7 +524,7 @@ label start:
     show bg pasillodorm with fade
     "I gaze at the clock for a second. I’m running late for my first class. I quickly open the door and start walking rather fast towards the stairwell."
 
-    "I’m so troubled by yesterday’s turn of events that I didn’t notice someone standing after a corner and end up bumping into her."
+    "I’m so troubled by yesterday’s turn of events that I didn’t notice someone standing after a corner and end up bumping into her." with Shake((0, 0, 0, 0), 0.5, dist=15)
     $ rose = "happy"
     show rose
     j "Sorry I didn't notice you were standing there, my bad"
