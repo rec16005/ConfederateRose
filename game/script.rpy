@@ -627,91 +627,102 @@ label bad:
     
 #Good Ending
 label good:
+    $ rose = "happy"
     "Rose smiles a little after my answer, but happiness doesn’t last long enough as she soon starts to weep a little."
-
+    $ rose = "closetears"
     j "What did I say?, Did I hurt you in someway?"
-
+    $ rose = "happytears2"
     r "No, it’s just, you gave me hope for a minute there…"
     r "You see... doctors said that my condition was untreatable..."
 
     j "That may be the case today but together we can search for it someway"
     j "We are on a biology-oriented university for that matter"
-
+    $ rose = "sad4"
     "It seems I succeed in calming her down a bit. Maybe we should go somewhere else, I feel like she opened to me in some way maybe I should make up for that."
 
     j "Hey , I know we’ve known each other for like a week, but you know you can trust me… anything you need that I can help you with you can tell me."
-
+    $ rose = "sad2"
     r "I know…"
 
     "I should really change the mood someway or the rest of the evening Is going to be pretty unpleasant."
 
     j "Maybe we can hit up the theater and watch a movie or something..."
-
+    $ rose = "surp"
     "She seems confused for a second there, but then I remember something that maybe I haven’t told her yet. Yes you guessed right, she still doesn’t know I’m a guy."
 
     j "I have a confession too Rose…"
-
+    $ rose = "surp2"
     r "Huh?"
 
     j "You see, the day I came to England they made a mistake on my University inscription, the truth is that I’m a man…"
-
+    $ rose = "surp"
     "Her eyes widen a bit but then she recovers her composure. A few seconds go by but still no answer from her. I start to worry."
-
+    hide rose with fade
     "I stand up and face the door, maybe it is better for me to get out. "
 
     "I cannot move, there is something holding me up, i quickly notice that Rose is holding up my sleeve and she wont let me advance."
-
+    $ rose = "madfrown"
+    show rose
     "She points at the place where I was sitting, so I assume she want’s me to sit down over there. After I do it, she takes another few seconds and starts talking."
 
     r "You see… I knew from the first day that you were a guy."
 
     j "Wha.. how?"
-
+    $ rose = "happy"
     r "Well... nobody noticed it but you entered the dorm wearing your casual clothes, and they were man-looking so I suspected it, later that night I went to check, well actually the other Rose went to check, and we found your ID on your luggage so basically we knew."
 
     j "You checked my backpack?!?"
-
+    $ rose = "sad2"
     r "Sorry I just couldn’t resist"
 
     j "Nah I was the one who was wrong, I should’ve told you from the start."
     j "So, we are even I suppose"
-
+    $ rose = "happy2"
     r "Yup… Nice to meet you"
 
     j "Stop fooling around you doofus, how about that movie then?"
-
+    $ rose = "laughing"
     r "Damn, straight for the vein, guys have less tact than I’ve thought..."
 
     "I think I made a funny face at that statement because she looks another way quickly."
-
+    $ rose = "happy2"
     r "Okay I’ll go out with you, just stop looking like a stray dog in front of a bakery please!"
+    $ rose = "sad"
     r "Before we go, let me go back to the dorm, I’m kinda tired at the moment and want to take a nap"
 
     j "Okay then, let's head back to our rooms"
-
+    hide rose with fade
+    scene bg calleinglesadia with fade
     "The journey back to the dorm is as monotonous as always, but has a different tone now. She knows my secret and I know hers. There is an invisible bond between us that tie us somehow."
+    scene bg edifapt with fade
+    scene bg pasillodorm with fade
+    scene bg cuartodorm with fade
     "We enter the building, climb up the stairs and part ways on the hall. I enter my room and go straight to sleep. This time I set up an alarm because I don’t want to screw up this date."
-
+    scene bg black with fade
     a "***beep beep***"
-
+    scene bg cuartodorm with fade
     "That annoying alarm wakes me up. After I come back to my senses it is not so bad, I have to get ready fast or I’ll be late."
 
     "I get ready in no-time, and on top of it I pick up my thick jacket, it seems like this evening is going to be chilly."
-
+    scene bg pasillodorm with fade
     "I walk over to Rose’s room and knock the door twice, it only takes me enough time to blink because she opens it faster than lightning."
-
+    $ rose = "happyclose"
+    show rose
     "I’m caught out of guard, so I say the first thing that comes to my mind."
 
     j "Hey, you ready?"
-
+    $ rose = "happy2"
     r "As ready as I’ll ever be."
-
+    hide rose with fade
+    scene bg edifapt with fade
+    scene bg calleinglesadia with fade
     "We walk out of the dorm and as we are walking down the street Rose steps in some frozen water, she almost falls off, but I manage to catch her on time."
 
     "I take the opportunity, I don’t think I’ll another one this good tonight."
-
+    $ rose = "surp"
+    show rose
     j "Careful girl, I don’t want to head up to the hospital tonight, I have an idea, why don’t you let me hold your hand so if you fall, we fall together?"
-
+    hide rose
     "Rose looks quickly another way, I don’t know what expression she makes but I go for it anyway, I mean what can I lose?"
 
     "She doesn’t let me hold her hand as she quickly withdraws them when I touch her."
@@ -719,29 +730,33 @@ label good:
     "I'm hurt inside, frozen in place. God please take me right now."
 
     "She approaches me, and grabs my arm up to my shoulder, she is so close I can even smell her hair. Floral essence, probably roses. Would make sense."
-
+    $ rose = "tsundere"
+    show rose
     "I take a look at her, she is so flustered she may pass out any second, but I cannot point that out, my manliness won’t let me do so."
 
     "We walk slowly, mainly because we want to stretch up the time we have together the most we can, using the excuse that we may trip over some ice."
-
+    scene bg afueracine with fade
+    hide rose
+    scene bg lobbycine with fade
     "We arrive at the cinema, it’s dawn when we pick up our tickets for the movie, it wasn’t much of a choice, the only two movies this small town had were a horror one and a futuristic dystopian type of movie."
 
     "It takes us some time to order our popcorn because the cashier was slow as a snail. After that, we go to our theatre-room. It’s almost empty, I’m not really surprised considering that nobody was buying tickets."
-
+    scene bg adentrocine with fade
     "We sit around the rows that are on the middle because we don't want to be too close to the screen."
 
     "At the start of the movie everything is ok, Rose seems to be doing ok, but then a scary scene pops up and she freaks out: I try to calm her a little but nothing seems to work. It’s then when I decide to grab her hand just to calm her down."
-
+    scene bg lobbycine with fade
     "It seems to work so I keep it for the rest of the movie as well. After the movie finishes we leave as usual and go to the lobby, it is late at night, the movie took more than we expected so it is deserted."
-
+    scene bg afueracine with fade
     "We go outside and it is pitch dark, can't even see my hands when I hold them right in front of me. Then I remember that Rose changes whenever it is night or day so I turn around as fast as I can and start searching for her."
-
+    $ rose = "surp"
+    show rose
     "It doesn’t take me long, she is standing at the theatre’s entrance, just there, shocked, staring at the sky."
 
     "I approach her but she doesn’t seem to notice me so I gently take her hand."
 
     j "What happened, did you happen to see a ghost or something?"
-
+    $ rose = "sad4"
     "She snaps out of it, then just looks at me and her expression changes completely. She is now borderline crying."
 
     j "What, did I say something that made you upset?"
@@ -749,23 +764,27 @@ label good:
     "She mumbles something but I can barely understand anything. I come closer to her and hug her so she knows I'm here for her if she needs me. "
 
     "She whispers in my ear: "
-
+    $ rose = "closetears"
     r "I’m shocked, it is now nighttime, but I’m still my normal self"
 
     j "How is that even possible!?"
-
+    $ rose = "happytears"
     r "I don’t really know, but today was a special day for me, I shared memories with someone I care about… I think you made this possible"
     r "The truth is that I care about you… No. That’s not true, since the moment that I first saw you, you moved something inside me."
     r "I started to look forward to our next meeting, I could barely sleep. But today all my doubts were washed away…"
+    $ rose = "surp2"
     r "I realized today that I’m in love with you."
 
     "I don’t even hesitate, I want her to know that I feel the same way she does, but the words don’t come out."
-
+    hide rose with fade
     "So I do what I feel would let her know how I feel about her."
 
     #Kiss Scene
-
+    $ rose = "happytears2"
+    show rose
     j "I want to know you better, I don’t care if you are missing parts, for me you are complete and that is what makes you perfect."
+    hide rose with fade
+    scene bg black with fade
     "END"
     return
     
