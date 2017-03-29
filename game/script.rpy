@@ -622,6 +622,7 @@ label bad:
     "I've brought this upon myself. Seems fitting I end up this way."
     "Suddenly everything goes black."
     "Finally I'm at ease, maybe in the next life I won’t be this careless…"
+    scene bg black with fade
     "END"
     return
     
@@ -789,64 +790,105 @@ label good:
     return
     
 label neutral:
+    $ rose = "surp"
+    show rose
     "Rose seems to be confused at my answer, she doesn’t even acknowledge anything. The rest of the evening we talk about things that have little to no impact whatsoever, after our chat is over I pay for our drinks and head out for the exit."
+    hide rose with fade
+    scene bg calleinglesadia with fade
+    scene bg edifapt with fade
+    scene bg pasillodorm with fade
     "We walk back to the dorms, nothing special happens all the way anyway. We climb up the stairs towards our rooms and split up when we are at our floor."
+    scene bg cuartodorm with fade
     "I enter the room feeling kinda sad, maybe I did something that Rose didn’t like or maybe something that made her upset. I really don’t know at all."
+    scene bg black with fade
     "Night comes but I'm not sleepy at all, maybe I’ll go for a walk somewhere outside. So I get ready, pick up my thick jacket and my scarf and head right outside."
+    scene bg pasillodorm with fade
     "Everyone is asleep, not surprising knowing it’s around  like 3 am or something. On the back of the dorms there is a little park with umbrellas so I take a sit around there."
+    scene bg exteriorbnch with fade
     "I pick up my phone and start to play a card game in it, ah it feels much better when you are outside, I’m not really claustrophobic but just the fact that I’m outside that little room makes me feel better."
     "Suddenly I feel like there is someone behind me."
     "I quickly get on guard and turn myself around but after my eyes get accustomed to the darkness I can say who is it."
     "It’s Rose."
+    $ nrose = "mad1"
+    show nrose
     j "Darn you scared me Rose, please don’t do that again"
+    $ nrose = "naughty"
     r "But you look cuter when you are scared like that"
     j "Wha..?"
     "I figure it out, it’s the other Rose, day Rose doesn’t normally behave like this."
+    $ nrose = "happy"
     r "Don’t you like nights?, I find them very vexing, this is the only time I have to be my real self."
     j "So you consider yourself as the real Rose then."
+    $ nrose = "mad4"
     r "Then explain why I have different feelings than the other Rose."
+    $ nrose = "mad"
     r "Some things don’t bother her but they piss me off. Sometimes she does something she regrets but I think they are Ok. I’m always present in her even If I cannot make anything to change the course of action."
+    $ nrose = "mad2"
     r "I’m my own self, trapped inside her, powerless"
     j "Well if it makes you feel better I like you as well, you may be evil and sadistic but those are your own traits and if you consider yourself as another person so will I"
+    $ nrose = "happy2"
     r "Considerate for someone who the other one despises"
     j "So the other Rose hates me… well I wasn’t for her when she needed me. I got what I deserved. I don’t know but it saddens me deeply somehow."
+    $ nrose = "bored"
     r "Huh, you talk like I care how you relationship with her is going. Go cry to your room alone, I won’t comfort you in any way if that’s what you expect."
+    $ nrose = "normal"
     r "I’ll take my leave, remember to close the gate so they don’t know you were outside this late."
     j "Wait, where are you going this late at night, It’s not safe for you to be on the streets."
+    hide nrose
     "She firmly ignores my advice and keeps on walking towards the street. I cannot let her go alone, I have to protect her somehow."
     "So I decide to follow her at distance, so she doesn’t know that I am protecting her."
+    scene bg calleinglesanoche with fade
     "Everything is calm so I can relax a bit, no one’s on the street so probably she will return safely after she is done with whatever it is she is planning to do."
+    scene bg puente with fade
     "She walks towards an old bridge, but she decides not to go over it, instead she takes some small rusty stairs on the side. The stairs go under the bridge, honestly, what is she thinking?"
     "I catch up to the bridge’s side and take a look inside, what I see amazes me. She is giving food she had on her backpack to a homeless family."
     "How is it even possible, this Rose could easily pass up for like a serial killer or something. This made me realize that appearances may deceive me but if I look closer maybe I’ll find the truth hidden somewhere."
     "Rose is quickly done with the family and starts walking towards where I’m hiding, so I climb the stairs as fast as I can, luckily I’m fast enough so she doesn’t notice me hiding on a bush."
+    scene bg carrosospechoso with fade
     "She starts walking back to the dorm but I notice something’s off. There is a car parked down the road. The car looks suspicious so I start approaching Rose to be as close as I can be."
     "Suddenly a man pops out of the car and grabs her by the arm, I don’t have much time to act so I run towards them. I catch up to them, he is still struggling on trying to get her on the passenger's seat."
     "I punch the guy in the face so hard he hits the back of his head with the door. He is knocked out."
     j "Rose we gotta get out of here fast!"
+    scene calleinglesanoche
+    $ nrose = "mad2"
+    show nrose
     "She is still baffled at the incident so she appears like she’s on shock. Kinda weird if you ask me because this Rose’s blood is as cold as ice."
     "I grab her forearm firmly and we start running to the dorms. We get there in no time."
+    hide nrose
+    scene bg exteriorbnch with fade
     "We take some time to recover some breath but we are exhausted because of the run. We stay like that a couple of minutes in silence, Rose is the one that breaks the silence."
+    $ nrose = "mad5"
+    show nrose
     r "Why were you following me?"
+    $ nrose = "sad"
     j "I just couldn't let a young woman go out this late at night, no matter if you are cold to me you are still precious to me."
+    $ nrose = "sad2"
     "As I finish my statement Rose explodes, She is crying seas. I don’t know what to do so I hug her firmly. She gets a hold of herself and pushes me away. She wipes her tears slowly."
+    $ nrose = "sad3"
     r "Remember when I told you that the other Rose made things that she liked but I disliked?"
     j "Yes, I remember, you told me just a few hours ago.."
+    $ nrose = "mad5"
     r "That's not the point I'm trying to make you smartass."
     "She gives me such a mean look that I may be facing satan himself, but it quickly changes to a more comprehensive one."
+    $ nrose = "blush2"
     r "What I’m trying to say is that the other one wanted you to stay away from her, and I don’t want that… Do you understand?"
     j "What are you trying to say, that you don't dislike me as the other Rose?"
+    $ nrose = "blush3"
     r "You fool, are going to make me say it don’t you!?"
+    $ nrose = "blush4"
     r "I think I’m in love with you, alright? I don’t want you to leave my side, do you understand?"
     "She approaches me, we are facing each other, just a few centimeters away from each other."
     "Suddenly she takes the initiative and kisses me, just a short one to see if I’m into her, I so I decide to assure her that I like her."
     "I kiss her again, longer this time."
+    $ nrose = "sad"
     "After it she kinda looks sad so I have to ask her why."
     j "Isn’t this what you wanted?"
     r "You probably don’t even like me. I mean, I’m different from the Rose you know, I have more flaws, and nobody likes the way I am"
     j "Those things you call flaws are the things that make you who you are, and I like it all"
+    $ nrose = "sad2"
     r "But I can't see you everyday, how can I be with you?... why did I have to be the night one and not the day one?"
     j "Love knows no boundaries Rose, I’ll be here with you every night for you are the Rose that matters to me."
+    scene bg black with fade
     "END"
     
     return
