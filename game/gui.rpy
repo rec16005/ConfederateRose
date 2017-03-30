@@ -23,17 +23,17 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#99ccff'
+define gui.accent_color = '#ffffff'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#555555'
+define gui.idle_color = '#ffffff'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
 define gui.idle_small_color = '#aaaaaa'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#c1e0ff'
+define gui.hover_color = '#ffb6c1'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
@@ -85,8 +85,8 @@ define gui.title_text_size = 50
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
-define gui.game_menu_background = "gui/game_menu.png"
+define gui.main_menu_background = im.Scale("gui/main_menu.png", 1280, 720)
+define gui.game_menu_background = im.Scale("gui/game_menu.png", 1280, 720)
 
 ## Should we show the name and version of the game?
 define gui.show_name = True
@@ -464,6 +464,3 @@ init python:
 
         ## Quick buttons.
         gui.quick_button_text_size = 20
-
-
-

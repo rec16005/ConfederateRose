@@ -287,6 +287,7 @@ label start:
     #Show bar
     
     "This is the suspicion bar, if it gets full, people will suspect that you are not a girl, try not to fill it if you wish to stay hidden."
+    "You can find out your suspicion points under the 'Stats' tab down, try to keep it down or bad things will happen!"
     
     #Continue Dialogue
     "Well i don’t want  to be exposed as a pervert in front of the university, so I will continue the act. I hope they don’t ask me to go swimming or something."
