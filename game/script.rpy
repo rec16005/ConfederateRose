@@ -236,14 +236,14 @@ label start:
     
     "*Day 1*"
     scene bg cuartodorm with fade
-    "I wake up by mere coincidence, didn’t even set an alarm or anything. Weird, i thought i didn’t sleep at all but it seems fatigue kicked in at last."
+    "I wake up by mere coincidence, didn’t even set an alarm or anything. Weird, I thought I didn’t sleep at all but it seems fatigue kicked in at last."
     "I am all settled in, just finished unpacking the things that I had on my suitcase and placed them on the only drawer the little room had. Just beside the pink duvet of the bed."
     "I go to the bathroom and take a shower. I see a hair dryer hanging in it’s holder."
     j "Hm… it’s weird that my room has a hair dryer. That is some quality appliances for the price I pay for this room."
     
     scene bg pasillodorm with fade
-    "Suddenly i hear someone knock on the door, and as i'm just getting out of the shower, just with a  towel on. I approach the door and proceed to open it."
-    "There is an old lady at the other side, i'm kinda surprised but at the same time i'm just as embarrassed."
+    "Suddenly I hear someone knock on the door, and as I'm just getting out of the shower, just with a  towel on. I approach the door and proceed to open it."
+    "There is an old lady at the other side, I'm kinda surprised but at the same time I'm just as embarrassed."
     ol "Just how indecent are women today! Cover yourself girl! I don’t care how flat chested you are, it is simply not right to open the door without a shirt!"
     "I'm confused."
     scene bg cuartodorm with fade
@@ -255,7 +255,7 @@ label start:
     "There is only girls at my floor not a single boy to be seen. I don’t know what to do so I just walk pass some sleepy looking girls and take the stairs to the first level." 
     scene bg pasillodorm with fade
     show rose chall with dissolve
-    "While i'm at it, i glimpse at a white haired girl gazing at my direction fixedly, maybe i’ve been exposed?." 
+    "While I'm at it, i glimpse at a white haired girl gazing at my direction fixedly, maybe I’ve been exposed?." 
     "She simply turns around and lets me escape the maelstrom."
     
     hide rose with fade
@@ -265,9 +265,9 @@ label start:
     scene bg salonclase with fade
     "I walk into class and proceed to take a sit on the last row, near the window because I like feeling the wind in  my skin."
     "Not even 5 minutes go by when a crowd of students flood the room and take their places."
-    "For a moment, i’m frozen in time, the same girl from this morning is moving in my direction."
+    "For a moment, I’m frozen in time, the same girl from this morning is moving in my direction."
     "Panic."
-    "She walks the distance there is from the door to my place and proceeds to take a sit just at my side. I don't know yet, but i think I just dodged a bullet."
+    "She walks the distance there is from the door to my place and proceeds to take a sit just at my side. I don't know yet, but I think I just dodged a bullet."
     "Class is just as boring as expected, so I feel relieved when the bell rings. I proceed to stand up and walk towards the class exit, but someone stands in front of me and doesn't let me get to it."
     show rose with dissolve
     u "Hi I don’t believe I’ve introduced myself, I'm Rose, your neighbor. Pleased to meet you."
@@ -290,7 +290,7 @@ label start:
     "You can find out your suspicion points under the 'Stats' tab down, try to keep it down or bad things will happen!"
     
     #Continue Dialogue
-    "Well i don’t want  to be exposed as a pervert in front of the university, so I will continue the act. I hope they don’t ask me to go swimming or something."
+    "Well I don’t want  to be exposed as a pervert in front of the university, so I will continue the act. I hope they don’t ask me to go swimming or something."
     scene bg calleinglesadia with fade
     "With that we set course towards the dorms. Rose leading me by the hand. Damn, girls don’t really mind physical contact between them. I try not to look too embarrassed, without success."
     show rose chall with dissolve
@@ -521,7 +521,7 @@ label start:
     $ nrose = "mad3"
     extend" you seemed cold this morning..."
     hide nrose with dissolve
-    "The rest is inaudible, but i think I got the important part anyway. I check the scarf, it's hand made with red and white candy floss, very warm at the touch."
+    "The rest is inaudible, but I think I got the important part anyway. I check the scarf, it's hand made with red and white candy floss, very warm at the touch."
     "I don’t know what to think I’m more confused now that I was at the mall."
     scene bg cuartodorm with fade
     "Anyway, I’ll ask her tomorrow about it. For now I’ll just go to sleep."
@@ -572,7 +572,7 @@ label start:
     $ rose = "sad3"
     show rose with Dissolve(0.25)
 
-    extend" but i’m faster so I grab her by the wrist before she can even start running away."
+    extend" but I’m faster so I grab her by the wrist before she can even start running away."
     
     "I turn her around so I can see her face again, she is crying. I don’t know what to do so I try to comfort her the only way I know."
     "I pat her on the head a couple of times and wipe her tears with my sleeve."
@@ -640,7 +640,7 @@ label start:
             $ b = b + 1
         "Don’t give up hope, you can be cured and live a normal life":
             j "Don't’ give up just yet."
-            j"Medicines advances so quickly that maybe in a couple of years you can be treated and finally live a normal life."
+            j"Medicine advances so quickly that maybe in a couple of years you can be treated and finally live a normal life."
             j"Hope is the last thing that dies and I’ll be right here for you, Rose."
             $ g = g + 1
         "I don’t feel comfortable talking about this kind of stuff with girls, sorry":
@@ -746,7 +746,7 @@ label good:
 
     r "I know…"
 
-    "I should really change the mood someway or the rest of the evening Is going to be pretty unpleasant."
+    "I should really change the mood someway or the rest of the evening is going to be pretty unpleasant."
 
     j "Maybe we can hit up the theater and watch a movie or something{w=.3}.{w=.3}.{w=.3}."
     $ rose = "surp"
@@ -763,7 +763,7 @@ label good:
     hide rose with fade
     "I stand up and face the door, maybe it is better for me to get out. "
 
-    "I cannot move, there is something holding me up, i quickly notice that Rose is holding up my sleeve and she wont let me advance."
+    "I cannot move, there is something holding me up, I quickly notice that Rose is holding up my sleeve and she wont let me advance."
     $ rose = "madfrown"
     $ sadrose='not'
     show rose with dissolve
