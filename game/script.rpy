@@ -141,7 +141,7 @@ image bg pasajero = im.Scale("Pasajero.png", 1280, 720)
 image bg universidad = im.Scale("Universidad.png", 1280, 720)
 image bg cafeteria = im.Scale("Cafeteria.png", 1280, 720)
 image bg black = im.Scale("Black.png", 1280, 720)
-
+image bg final = im.Scale("main_menu.png", 1280, 720)
 
 
 image rose = LiveComposite(
@@ -721,7 +721,7 @@ label bad:
     "Suddenly everything goes black."
     "Finally I'm at ease, maybe in the next life I won’t be this careless…"
     scene bg black with fade
-    "END"
+    call credits
     return
     
 #Good Ending
@@ -895,7 +895,7 @@ label good:
     j "I want to know you better, I don’t care if you are missing parts, for me you are complete and that is what makes you perfect."
     hide rose with fade
     scene bg black with fade
-    "END"
+    call credits
     return
     
 label neutral:
@@ -1003,10 +1003,52 @@ label neutral:
     r "But I can't see you everyday, how can I be with you?... why did I have to be the night one and not the day one?"
     j "Love knows no boundaries Rose, I’ll be here with you every night for you are the Rose that matters to me."
     scene bg black with fade
-    "END"
     
+    call credits
     return
 
+label credits:
+    $ credits_speed = 25 
+    scene bg final 
+    with dissolve
+    show theend:
+        yanchor 0.5 ypos 0.5
+        xanchor 0.5 xpos 0.5
+    with dissolve
+    with Pause(1)
+    hide theend
+    show cred at Move((0.5, 5.0), (0.5, 0.0), credits_speed, repeat=False, bounce=False, xanchor="center", yanchor="bottom")
+    with Pause(credits_speed)
+    show thanks:
+        yanchor 0.5 ypos 0.5
+        xanchor 0.5 xpos 0.5
+    with dissolve
+    with Pause(1)
+    hide thanks
+    show extra:
+        yanchor 0.5 ypos 0.5
+        xanchor 0.5 xpos 0.5
+    with dissolve
+    with Pause(3)
+    hide extra
+    return
+
+init python:
+    credits = ('Character Artist', 'Russel Alfonso'), ('Backgrounds', 'Yasmin Chavez'), ('Backgrounds', 'Ivette Cardona'), ('GUI', 'Andrea Cordon'), ('Script', 'Jose Rodolfo Perez'), ('Coding', 'Sebastian Recinos'), ('Spell Check', 'Samantha Duarte'), ('Spell Check', 'Cristian Perez')
+    credits_s = "{size=80}Credits\n\n"
+    c1 = ''
+    for c in credits:
+        if not c1==c[0]:
+            credits_s += "\n{size=40}" + c[0] + "\n"
+        credits_s += "{size=60}" + c[1] + "\n"
+        c1=c[0]
+    credits_s += "\n{size=40}Engine\n{size=60}" + renpy.version()
+    
+init:
+    image cred = Text(credits_s, text_align=0.5)
+    image theend = Text("{size=80}The End", text_align=0.5)
+    image thanks = Text("{size=80}Thanks for Playing!", text_align=0.5)
+    image extra = Text("{size=60}Don't Forget to get all the endings!", text_align=0.5)
 
 
 
